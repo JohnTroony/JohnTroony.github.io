@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feeds/all.atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2015-02-12T16:28:00+03:00</updated><entry><title>My GnuPG Transition</title><link href="http://prewired.pw/2015/02/New-GPG.html" rel="alternate"></link><updated>2015-02-12T16:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-02-12:2015/02/New-GPG.html</id><summary type="html">&lt;h3&gt;The old key, which I am transitional away from, is:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pub&lt;/span&gt;  &lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;D5E28EE0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0x192BA1E6D5E28EE0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt; 
+&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DB&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;Infosec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;promaxted&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DB&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;Infosec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;jayombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;gmail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;Fingerprint&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ACF5&lt;/span&gt; &lt;span class="n"&gt;FAFE&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;C3D&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="n"&gt;CE5&lt;/span&gt; &lt;span class="mi"&gt;95&lt;/span&gt;&lt;span class="n"&gt;D9&lt;/span&gt;  &lt;span class="n"&gt;C31B&lt;/span&gt; &lt;span class="mi"&gt;192&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="n"&gt;A1E6&lt;/span&gt; &lt;span class="n"&gt;D5E2&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="n"&gt;EE0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;The new key, to which I am transitioning, is:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pub&lt;/span&gt;  &lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;AD3A484C&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0x7b85a886ad3a484c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt; 
+&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;outlook&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Troon&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;jayombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;gmail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;Fingerprint&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CC89&lt;/span&gt; &lt;span class="mi"&gt;97&lt;/span&gt;&lt;span class="n"&gt;A6&lt;/span&gt; &lt;span class="mf"&gt;1F&lt;/span&gt;&lt;span class="mi"&gt;78&lt;/span&gt; &lt;span class="mi"&gt;304&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="n"&gt;D91&lt;/span&gt;  &lt;span class="n"&gt;C27F&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="n"&gt;B85&lt;/span&gt; &lt;span class="n"&gt;A886&lt;/span&gt; &lt;span class="n"&gt;AD3A&lt;/span&gt; &lt;span class="mi"&gt;484&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;a href="https://raw.githubusercontent.com/JohnTroony/My-GPG-key-transition/master/gpg-transition.txt"&gt;gpg-transition.txt&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Contains detailed info about my GPG transition/revocation.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://raw.githubusercontent.com/JohnTroony/My-GPG-key-transition/master/sig1.txt"&gt;sig1.txt&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Signature of the gpg-transition.txt using the old key 0x192BA1E6D5E28EE0&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://raw.githubusercontent.com/JohnTroony/My-GPG-key-transition/master/sig2.txt"&gt;sig2.txt&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Signature of the gpg-transition.txt using the new key 0x7b85a886ad3a484c&lt;/p&gt;
+&lt;h2&gt;Updating&lt;/h2&gt;
+&lt;p&gt;To fetch the full new key from a public key server using GnuPG, run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    gpg --keyserver keys.gnupg.net --recv-key 0x7B85A886AD3A484C
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you have already validated my old key, you can then validate that the
+new key is signed by my old key:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    gpg --check-sigs 0x7B85A886AD3A484C
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Just incase you need to clarify anything about my GnuPG keys, reach me via &lt;strong&gt;jayombagi at gmail dot com&lt;/strong&gt;&lt;/p&gt;</summary><category term="GPG"></category><category term="security"></category></entry></feed>
