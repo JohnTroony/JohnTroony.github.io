@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://prewired.pw/2015/02/dropbox-with-LUKS.html" />
+
+    <title>  Prewired &mdash; Securing backups to Dropbox with LUKS
+</title>
+
+      <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+      <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+
+      <link type="application/atom+xml" rel="alternate" href="/feed/atom.xml"  title="Prewired Atom Feed">
+
+    <link rel="stylesheet" href="http://prewired.pw/theme/css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="author" content="John Troon">
+    <meta name="description" content="Using Dropbox to synchronize a single binary file that is a LUKS-encrypted">
+  <meta name="tags" contents="LUKS, security, ">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+      <div class="header-image pull-left">
+        <a class="nodec" href="http://prewired.pw"><img src=/images/profile.png></a>
+      </div>
+    <div class="header-inner">
+      <h1 class="header-name">
+        <a class="nodec" href="http://prewired.pw">Prewired</a>
+      </h1>
+      <h3 class="header-text">Random Thoughts Aligned..</h3>
+      <ul class="header-menu list-inline">
+          <li><a class="nodec icon-github" href="https://github.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-twitter" href="https://twitter.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-rss" href="/feed/atom.xml"></a></li>
+      </ul>
+    </div>
+  </div>
+</header> <!-- /.header -->  <div class="container">
+  <div class="post full-post">
+    <h1 class="post-title">
+      <a href="/2015/02/dropbox-with-LUKS.html" title="Permalink to Securing backups to Dropbox with LUKS">Securing backups to Dropbox with LUKS</a>
+    </h1>
+    <ul class="list-inline">
+      <li class="post-date">
+        <a class="text-muted" href="/2015/02/dropbox-with-LUKS.html" title="2015-02-25T12:28:00+03:00">Wed 25 February 2015</a>
+      </li>
+      <li class="muted">&middot;</li>
+      <li class="post-category">
+        <a href="http://prewired.pw/category/linux.html">Linux</a>
+      </li>
+        <li class="muted">&middot;</li>
+        <li>
+          <address class="post-author">
+            By <a href="http://prewired.pw/author/john-troon.html">John Troon</a>
+          </address>
+        </li>
+    </ul>
+    <div class="post-content">
+      <h3>Dropbox meets LUKS</h3>
+<p>When it comes to my data, I like it private even though I've nothing to hide (ignore the paradox). I've been using <a href="https://www.dropbox.com/">Dropbox</a> and <a href="http://docs.openstack.org/developer/swift/">Swift (OpenStack Object Storage project)</a> to backup my data.</p>
+<p>I tried writing a BASH script to recursively encrypt all the content of a folder with my public <a href="http://prewired.pw/2015/02/New-GPG.html">GPG key</a> and sync the encrypted content of the folder with my remote backup (but with time it wasn't cool, not at all!). I had to plug-in my USB disk that has my private GPG keys each time I had to open any of the encrypted files, what a PITA!</p>
+<p>Now, I've been using Dropbox to synchronize a single binary file that is LUKS-encrypted Linux file system. It might not seem cool but it's easier for me :) </p>
+<p>This process (of Dropbox+LUKS) is sort of a cliché right now but I'm just posting to share my simplified way of doing it...</p>
+<h3>Step one:</h3>
+<p>Install Dropbox, head over to <a href="https://www.dropbox.com/install?os=lnx">Dropbox's site</a> and get Dropbox. I'm currently using Ubuntu 14 (Yes, Ubuntu!).. or do a Dropbox headless Install via command line</p>
+<div class="highlight"><pre>32-bit:
+
+<span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&quot;https://www.dropbox.com/download?plat=lnx.x86&quot;</span> | tar xzf -
+
+64-bit:
+
+<span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot;</span> | tar xzf -
+
+Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
+
+~/.dropbox-dist/dropboxd
+</pre></div>
+
+
+<h3>Step Two:</h3>
+<p>Make sure you have a working Dropbox Account, if not, <a href="https://www.dropbox.com/register">register for a Dropbox account</a>. Then sign-in to Dropbox via your installed Dropbox client (make sure the dropbox daemon is running).</p>
+<p>You should have a folder named Dropbox in your home folder after you've logged-in to your account. </p>
+<h3>Step Three:</h3>
+<p>Download <a href="https://github.com/JohnTroony/LUKS-OPs/releases">Luks-Ops</a>, a script that I've written to automate the basic LUKS operation on Linux.</p>
+<div class="highlight"><pre><span class="c"># 1. Clone the repo</span>
+git clone https://github.com/JohnTroony/LUKS-OPs.git
+<span class="nb">cd </span>LUKS-OPs
+
+<span class="c"># 2. Change to super user</span>
+sudo su 
+
+<span class="c"># 3. Copy the script to /bin  as luksOps</span>
+cp luks-ops.sh /bin/luksOps 
+
+<span class="c"># 4. Move into the Dropbox folder to create the LUKS container</span>
+<span class="nb">cd</span> /home/user/Dropbox 
+
+<span class="c"># 5. Create a LUKS container but don&#39;t mount it, DISKNAME is the label, 1000 is size in MB</span>
+luksOps new DISKNAME 1000
+
+<span class="c"># 6. Move the created LUKS container (DISKNAME) to /home/user/Dropbox</span>
+mv /usr/DISKNAME .
+
+<span class="c"># 7. Mount the LUKS container. This will ask for the pass phrase.</span>
+luksOps mount DISKNAME
+
+<span class="c"># 8. Add files to the Mounted LUKS container then use the following command to exit</span>
+luksOps unmount-all
+</pre></div>
+
+
+<p>That is all, once you have the LUKS container in the <code>~/Dropbox</code> folder, you can always mount it, add files (You wouldn't want to be adding and removing large multimedia files to the container though.
+), unmount it and let Dropbox sync the changes!</p>
+<p>N.B: check luksOps menu for more options like to unmount a single volume instead of all.</p>
+<p>Done!</p>
+<h3>I've to checkout:</h3>
+<ol>
+<li><a href="http://sovworks.com/eds/">EDS</a></li>
+<li><a href="http://en.wikipedia.org/wiki/EncFS">EncFS</a></li>
+<li><a href="http://duplicity.nongnu.org/">duplicity</a></li>
+<li><a href="https://tahoe-lafs.org/trac/tahoe-lafs/wiki">Tahoe-LAFS</a></li>
+<li><a href="https://apps.ubuntu.com/cat/applications/precise/cryptkeeper/">CryptKeeper</a></li>
+</ol>
+<p>In pictures: </p>
+<ol>
+<li><img alt="Step one" src="/images/1.png" /></li>
+<li><img alt="Step Two" src="/images/2.png" /></li>
+<li><img alt="Step Three" src="/images/3.png" /></li>
+<li><img alt="Step Four" src="/images/4.png" /></li>
+<li><img alt="Step Five" src="/images/5.png" /></li>
+<li><img alt="Step Six" src="/images/6.png" /></li>
+</ol>
+<h3>Let's encrypt!</h3>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="col-md-8 col-md-offset-2">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'prewired';
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript=prewired">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+    <a href="https://disqus.com" class="dsq-brlink">
+      blog comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+  </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+    </p>
+    <div class="text-center">
+      Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
+    </div>
+  </div>
+</footer> <!-- /.footer -->
+  <script src="http://prewired.pw/theme/js/jquery.min.js"></script>
+  <script src="http://prewired.pw/theme/js/bootstrap.min.js"></script>
+</body> <!-- 42 -->
+
+</html>
