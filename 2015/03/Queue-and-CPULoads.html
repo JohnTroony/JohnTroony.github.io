@@ -5,9 +5,9 @@
       <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://prewired.pw/2015/02/New-GPG.html" />
+    <link rel="canonical" href="http://prewired.pw/2015/03/Queue-and-CPULoads.html" />
 
-    <title>  Prewired &mdash; My GnuPG Transition
+    <title>  Prewired &mdash; Queue & Load Average in Linux
 </title>
 
       <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
@@ -28,8 +28,8 @@
 
 
     <meta name="author" content="John Troon">
-    <meta name="description" content="I'm slowly transiting from my old GnuPG keys to a new one.">
-  <meta name="tags" contents="GPG, security, ">
+    <meta name="description" content="Something about Queue & Load Average in Linux">
+  <meta name="tags" contents="Linux, ">
 </head>
 
 <body>
@@ -53,11 +53,11 @@
 </header> <!-- /.header -->  <div class="container">
   <div class="post full-post">
     <h1 class="post-title">
-      <a href="/2015/02/New-GPG.html" title="Permalink to My GnuPG Transition">My GnuPG Transition</a>
+      <a href="/2015/03/Queue-and-CPULoads.html" title="Permalink to Queue & Load Average in Linux">Queue & Load Average in Linux</a>
     </h1>
     <ul class="list-inline">
       <li class="post-date">
-        <a class="text-muted" href="/2015/02/New-GPG.html" title="2015-02-12T16:28:00+03:00">Thu 12 February 2015</a>
+        <a class="text-muted" href="/2015/03/Queue-and-CPULoads.html" title="2015-03-19T14:15:00+03:00">Thu 19 March 2015</a>
       </li>
       <li class="muted">&middot;</li>
       <li class="post-category">
@@ -71,41 +71,31 @@
         </li>
     </ul>
     <div class="post-content">
-      <h3>The old key, which I am transitional away from, is:</h3>
-<div class="highlight"><pre>pub  4096R/D5E28EE0 (0x192BA1E6D5E28EE0) 2014-02-22 
-John Ombagi (Linux, DB &amp; Infosec) &lt;ombagi@promaxted.com&gt;
-John Ombagi (Linux, DB &amp; Infosec) &lt;jayombagi@gmail.com&gt;
-Fingerprint=ACF5 FAFE 3C3D 4CE5 95D9  C31B 192B A1E6 D5E2 8EE0
+      <p>Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute 
+intervals. So, the runtime queue is a count of the number of processes ready to run at any given point in time.</p>
+<div class="highlight"><pre><span class="nv">$ </span>uptime
+ 14:17pm  up   0:57,  <span class="m">6</span> users,  load average: 0.37, 0.54, 0.44
 </pre></div>
 
 
-<h3>The new key, to which I am transitioning, is:</h3>
-<div class="highlight"><pre>pub  4096R/AD3A484C (0x7b85a886ad3a484c) 2014-11-10 
-John Ombagi &lt;ombagi@outlook.com&gt;
-John Ombagi (Troon) &lt;jayombagi@gmail.com&gt;
-Fingerprint=CC89 97A6 1F78 304A 7D91  C27F 7B85 A886 AD3A 484C
-</pre></div>
-
-
-<h3><a href="https://raw.githubusercontent.com/JohnTroony/My-GPG-key-transition/master/gpg-transition.txt">gpg-transition.txt</a></h3>
-<p>Contains detailed info about my GPG transition/revocation.</p>
-<h3><a href="https://raw.githubusercontent.com/JohnTroony/My-GPG-key-transition/master/sig1.txt">sig1.txt</a></h3>
-<p>Signature of the gpg-transition.txt using the old key 0x192BA1E6D5E28EE0</p>
-<h3><a href="https://raw.githubusercontent.com/JohnTroony/My-GPG-key-transition/master/sig2.txt">sig2.txt</a></h3>
-<p>Signature of the gpg-transition.txt using the new key 0x7b85a886ad3a484c</p>
-<h2>Updating</h2>
-<p>To fetch the full new key from a public key server using GnuPG, run:</p>
-<div class="highlight"><pre>    gpg --keyserver keys.gnupg.net --recv-key 0x7B85A886AD3A484C
-</pre></div>
-
-
-<p>If you have already validated my old key, you can then validate that the
-new key is signed by my old key:</p>
-<div class="highlight"><pre>    gpg --check-sigs 0x7B85A886AD3A484C
-</pre></div>
-
-
-<p>Just incase you need to clarify anything about my GnuPG keys, reach me via <strong>jayombagi at gmail dot com</strong></p>
+<p>That means, a value less than 1 is not bad and there is never a process idling in the queue waiting to be run. Therefore, when 
+the load averages start to rise over 1, know there is always a process ready and waiting to be scheduled!</p>
+<p>Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical<br />
+system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time. </p>
+<hr />
+<p>These data can be monitored through:</p>
+<ul>
+<li>vmstat</li>
+<li>top</li>
+<li>uptime</li>
+</ul>
+<p>uptime has a somehow nice output of the load average data.</p>
+<hr />
+<p>Read: </p>
+<ol>
+<li><a href="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages">Understanding Linux CPU Load</a></li>
+<li><a href="https://prutser.wordpress.com/2012/04/23/understanding-linux-load-average-part-1">Understanding Linux Load Average – Part 1</a></li>
+</ol>
     </div>
   </div>
   <hr class="separator">

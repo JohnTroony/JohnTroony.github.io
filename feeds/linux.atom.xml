@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feeds/linux.atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2015-02-25T12:28:00+03:00</updated><entry><title>Securing backups to Dropbox with LUKS</title><link href="http://prewired.pw/2015/02/dropbox-with-LUKS.html" rel="alternate"></link><updated>2015-02-25T12:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-02-25:2015/02/dropbox-with-LUKS.html</id><summary type="html">&lt;h3&gt;Dropbox meets LUKS&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feeds/linux.atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2015-03-19T14:15:00+03:00</updated><entry><title>Queue &amp; Load Average in Linux</title><link href="http://prewired.pw/2015/03/Queue-and-CPULoads.html" rel="alternate"></link><updated>2015-03-19T14:15:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-03-19:2015/03/Queue-and-CPULoads.html</id><summary type="html">&lt;p&gt;Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute 
+intervals. So, the runtime queue is a count of the number of processes ready to run at any given point in time.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;uptime
+ 14:17pm  up   0:57,  &lt;span class="m"&gt;6&lt;/span&gt; users,  load average: 0.37, 0.54, 0.44
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That means, a value less than 1 is not bad and there is never a process idling in the queue waiting to be run. Therefore, when 
+the load averages start to rise over 1, know there is always a process ready and waiting to be scheduled!&lt;/p&gt;
+&lt;p&gt;Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical&lt;br /&gt;
+system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time. &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;These data can be monitored through:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;vmstat&lt;/li&gt;
+&lt;li&gt;top&lt;/li&gt;
+&lt;li&gt;uptime&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;uptime has a somehow nice output of the load average data.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Read: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages"&gt;Understanding Linux CPU Load&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://prutser.wordpress.com/2012/04/23/understanding-linux-load-average-part-1"&gt;Understanding Linux Load Average – Part 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</summary><category term="Linux"></category></entry><entry><title>Securing backups to Dropbox with LUKS</title><link href="http://prewired.pw/2015/02/dropbox-with-LUKS.html" rel="alternate"></link><updated>2015-02-25T12:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-02-25:2015/02/dropbox-with-LUKS.html</id><summary type="html">&lt;h3&gt;Dropbox meets LUKS&lt;/h3&gt;
 &lt;p&gt;When it comes to my data, I like it private even though I've nothing to hide (ignore the paradox). I've been using &lt;a href="https://www.dropbox.com/"&gt;Dropbox&lt;/a&gt; and &lt;a href="http://docs.openstack.org/developer/swift/"&gt;Swift (OpenStack Object Storage project)&lt;/a&gt; to backup my data.&lt;/p&gt;
 &lt;p&gt;I tried writing a BASH script to recursively encrypt all the content of a folder with my public &lt;a href="http://prewired.pw/2015/02/New-GPG.html"&gt;GPG key&lt;/a&gt; and sync the encrypted content of the folder with my remote backup (but with time it wasn't cool, not at all!). I had to plug-in my USB disk that has my private GPG keys each time I had to open any of the encrypted files, what a PITA!&lt;/p&gt;
 &lt;p&gt;Now, I've been using Dropbox to synchronize a single binary file that is LUKS-encrypted Linux file system. It might not seem cool but it's easier for me :) &lt;/p&gt;
@@ -8,11 +32,11 @@
 &lt;p&gt;Install Dropbox, head over to &lt;a href="https://www.dropbox.com/install?os=lnx"&gt;Dropbox's site&lt;/a&gt; and get Dropbox. I'm currently using Ubuntu 14 (Yes, Ubuntu!).. or do a Dropbox headless Install via command line&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;32-bit:
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86&amp;quot;&lt;/span&gt; | tar xzf -
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tar xzf -
 
 64-bit:
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86_64&amp;quot;&lt;/span&gt; | tar xzf -
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86_64&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tar xzf -
 
 Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
@@ -64,28 +88,19 @@ luksOps unmount-all
 &lt;li&gt;&lt;a href="https://tahoe-lafs.org/trac/tahoe-lafs/wiki"&gt;Tahoe-LAFS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://apps.ubuntu.com/cat/applications/precise/cryptkeeper/"&gt;CryptKeeper&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;In pictures: &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;img alt="Step one" src="/images/1.png" /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img alt="Step Two" src="/images/2.png" /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img alt="Step Three" src="/images/3.png" /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img alt="Step Four" src="/images/4.png" /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img alt="Step Five" src="/images/5.png" /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img alt="Step Six" src="/images/6.png" /&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h3&gt;Let's encrypt!&lt;/h3&gt;</summary><category term="LUKS"></category><category term="security"></category></entry><entry><title>My GnuPG Transition</title><link href="http://prewired.pw/2015/02/New-GPG.html" rel="alternate"></link><updated>2015-02-12T16:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-02-12:2015/02/New-GPG.html</id><summary type="html">&lt;h3&gt;The old key, which I am transitional away from, is:&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pub&lt;/span&gt;  &lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;D5E28EE0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0x192BA1E6D5E28EE0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt; 
-&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DB&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;Infosec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;promaxted&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DB&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;Infosec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;jayombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;gmail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="n"&gt;Fingerprint&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ACF5&lt;/span&gt; &lt;span class="n"&gt;FAFE&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;C3D&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="n"&gt;CE5&lt;/span&gt; &lt;span class="mi"&gt;95&lt;/span&gt;&lt;span class="n"&gt;D9&lt;/span&gt;  &lt;span class="n"&gt;C31B&lt;/span&gt; &lt;span class="mi"&gt;192&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="n"&gt;A1E6&lt;/span&gt; &lt;span class="n"&gt;D5E2&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="n"&gt;EE0&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pub  4096R/D5E28EE0 (0x192BA1E6D5E28EE0) 2014-02-22 
+John Ombagi (Linux, DB &amp;amp; Infosec) &amp;lt;ombagi@promaxted.com&amp;gt;
+John Ombagi (Linux, DB &amp;amp; Infosec) &amp;lt;jayombagi@gmail.com&amp;gt;
+Fingerprint=ACF5 FAFE 3C3D 4CE5 95D9  C31B 192B A1E6 D5E2 8EE0
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;The new key, to which I am transitioning, is:&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pub&lt;/span&gt;  &lt;span class="mi"&gt;4096&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;AD3A484C&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0x7b85a886ad3a484c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt; 
-&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;outlook&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="n"&gt;John&lt;/span&gt; &lt;span class="n"&gt;Ombagi&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Troon&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;jayombagi&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;gmail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="n"&gt;Fingerprint&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CC89&lt;/span&gt; &lt;span class="mi"&gt;97&lt;/span&gt;&lt;span class="n"&gt;A6&lt;/span&gt; &lt;span class="mf"&gt;1F&lt;/span&gt;&lt;span class="mi"&gt;78&lt;/span&gt; &lt;span class="mi"&gt;304&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="n"&gt;D91&lt;/span&gt;  &lt;span class="n"&gt;C27F&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="n"&gt;B85&lt;/span&gt; &lt;span class="n"&gt;A886&lt;/span&gt; &lt;span class="n"&gt;AD3A&lt;/span&gt; &lt;span class="mi"&gt;484&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pub  4096R/AD3A484C (0x7b85a886ad3a484c) 2014-11-10 
+John Ombagi &amp;lt;ombagi@outlook.com&amp;gt;
+John Ombagi (Troon) &amp;lt;jayombagi@gmail.com&amp;gt;
+Fingerprint=CC89 97A6 1F78 304A 7D91  C27F 7B85 A886 AD3A 484C
 &lt;/pre&gt;&lt;/div&gt;
 
 

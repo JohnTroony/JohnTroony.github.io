@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://prewired.pw/</loc>
-<lastmod>2015-02-25T14:06:14-00:00</lastmod>
+<lastmod>2015-03-21T10:55:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/archives.html</loc>
-<lastmod>2015-02-25T14:06:14-00:00</lastmod>
+<lastmod>2015-03-21T10:55:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/tags.html</loc>
-<lastmod>2015-02-25T14:06:14-00:00</lastmod>
+<lastmod>2015-03-21T10:55:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/categories.html</loc>
-<lastmod>2015-02-25T14:06:14-00:00</lastmod>
+<lastmod>2015-03-21T10:55:28-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.pw/2015/03/Queue-and-CPULoads.html</loc>
+<lastmod>2015-03-19T14:15:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -47,6 +54,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://prewired.pw/category/linux.html</loc>
+<lastmod>2015-03-19T14:15:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.pw/tag/luks.html</loc>
 <lastmod>2015-02-25T12:28:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -67,15 +81,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://prewired.pw/tag/luks.html</loc>
-<lastmod>2015-02-25T12:28:00+02:27</lastmod>
+<loc>http://prewired.pw/tag/linux.html</loc>
+<lastmod>2015-03-19T14:15:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/author/john-troon.html</loc>
-<lastmod>2015-02-25T12:28:00+02:27</lastmod>
+<lastmod>2015-03-19T14:15:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
