@@ -71,27 +71,27 @@
         </li>
     </ul>
     <div class="post-content">
-      <p>Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute 
+      <p>Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute
 intervals. So, the runtime queue is a count of the number of processes ready to run at any given point in time.</p>
 <div class="highlight"><pre><span class="nv">$ </span>uptime
  14:17pm  up   0:57,  <span class="m">6</span> users,  load average: 0.37, 0.54, 0.44
 </pre></div>
 
 
-<p>That means, a value less than 1 is not bad and there is never a process idling in the queue waiting to be run. Therefore, when 
+<p>That means, a value less than 1 is not bad and there is never a process idling in the queue waiting to be run. Therefore, when
 the load averages start to rise over 1, know there is always a process ready and waiting to be scheduled!</p>
-<p>Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical<br />
-system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time. </p>
+<p>Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time.</p>
 <hr />
 <p>These data can be monitored through:</p>
-<ul>
-<li>vmstat</li>
-<li>top</li>
-<li>uptime</li>
-</ul>
-<p>uptime has a somehow nice output of the load average data.</p>
+<div class="highlight"><pre>uptime
+top
+vmstat
+</pre></div>
+
+
+<p>uptime somehow has a nice output of the load average data.</p>
 <hr />
-<p>Read: </p>
+<p>Read:</p>
 <ol>
 <li><a href="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages">Understanding Linux CPU Load</a></li>
 <li><a href="https://prutser.wordpress.com/2012/04/23/understanding-linux-load-average-part-1">Understanding Linux Load Average – Part 1</a></li>

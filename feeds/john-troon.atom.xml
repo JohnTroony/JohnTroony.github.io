@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feeds/john-troon.atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2015-03-19T14:15:00+03:00</updated><entry><title>Queue &amp; Load Average in Linux</title><link href="http://prewired.pw/2015/03/Queue-and-CPULoads.html" rel="alternate"></link><updated>2015-03-19T14:15:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-03-19:2015/03/Queue-and-CPULoads.html</id><summary type="html">&lt;p&gt;Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feeds/john-troon.atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2015-03-19T14:15:00+03:00</updated><entry><title>Queue &amp; Load Average in Linux</title><link href="http://prewired.pw/2015/03/Queue-and-CPULoads.html" rel="alternate"></link><updated>2015-03-19T14:15:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-03-19:2015/03/Queue-and-CPULoads.html</id><summary type="html">&lt;p&gt;Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute
 intervals. So, the runtime queue is a count of the number of processes ready to run at any given point in time.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;uptime
  14:17pm  up   0:57,  &lt;span class="m"&gt;6&lt;/span&gt; users,  load average: 0.37, 0.54, 0.44
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;That means, a value less than 1 is not bad and there is never a process idling in the queue waiting to be run. Therefore, when 
+&lt;p&gt;That means, a value less than 1 is not bad and there is never a process idling in the queue waiting to be run. Therefore, when
 the load averages start to rise over 1, know there is always a process ready and waiting to be scheduled!&lt;/p&gt;
-&lt;p&gt;Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical&lt;br /&gt;
-system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time. &lt;/p&gt;
+&lt;p&gt;Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;These data can be monitored through:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;vmstat&lt;/li&gt;
-&lt;li&gt;top&lt;/li&gt;
-&lt;li&gt;uptime&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;uptime has a somehow nice output of the load average data.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;uptime
+top
+vmstat
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;uptime somehow has a nice output of the load average data.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Read: &lt;/p&gt;
+&lt;p&gt;Read:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages"&gt;Understanding Linux CPU Load&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://prutser.wordpress.com/2012/04/23/understanding-linux-load-average-part-1"&gt;Understanding Linux Load Average – Part 1&lt;/a&gt;&lt;/li&gt;
