@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prewired</title><link>http://prewired.pw/</link><description></description><atom:link href="http://prewired.pw/feeds/john-troon.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 Mar 2015 14:15:00 +0300</lastBuildDate><item><title>Queue &amp; Load Average in Linux</title><link>http://prewired.pw/2015/03/Queue-and-CPULoads.html</link><description>&lt;p&gt;Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prewired</title><link>http://prewired.pw/</link><description></description><atom:link href="http://prewired.pw/feeds/john-troon.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 27 Apr 2015 14:15:00 +0300</lastBuildDate><item><title>Rocking it! GNOME3 Shell Extensions..</title><link>http://prewired.pw/2015/04/gnome-extension.html</link><description>&lt;p&gt;I don't really give a tinker's damn about your desktop, if you have a picture of a unicorn as your wallpaper or a really old picture of Hitler smiling, that's up to you. Though, sometimes I do care about having my files/folders arranged, in a way I can remember everything on a "where-is-X" basis, and adjusting system's default settings.&lt;/p&gt;
+&lt;p&gt;What GNOME offers, even after a fresh install without tweaks, is satisfying. There are decent unbiased articles&lt;sup&gt;1&lt;/sup&gt; written specifically about GNOME features and comparison made against KDE. Both Desktop-environments have their strengths and  weaknesses, choosing what fits you is kind of religious and experimental.&lt;/p&gt;
+&lt;p&gt;The list of projects&lt;sup&gt;2&lt;/sup&gt; covered under GNOME is long. Here, I simply searched for some &lt;a href="https://extensions.gnome.org/"&gt;extensions&lt;/a&gt; that are potentially helpful, below is a list of what I picked:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://extensions.gnome.org/extension/97/coverflow-alt-tab/"&gt;Coverflow alt-tab&lt;/a&gt; - Nice preview of the running applications when you use Alt+Tab.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://extensions.gnome.org/extension/760/minimize-all/"&gt;Minimize all&lt;/a&gt; - A lot of windows and sometimes you just want to see your desktop?&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://extensions.gnome.org/extension/815/simple-dock/"&gt;Simple dock&lt;/a&gt; - Easy access to most used application?&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://extensions.gnome.org/extension/162/todo-list/"&gt;Todo list&lt;/a&gt; - Easily distracted and want to keep track of activities to finish?&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://extensions.gnome.org/extension/442/drop-down-terminal/"&gt;Drop Down Terminal&lt;/a&gt; - Just a bonus extension for getting a pseudo-terminal on the fly!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No other extra configs required if you are using the "GNOME Tweak Tool" for the installs, apart from the &lt;a href="https://extensions.gnome.org/extension/442/drop-down-terminal/"&gt;Drop Down Terminal&lt;/a&gt; extension, which requires the &lt;em&gt;Vte library (version &amp;gt;= 0.31)&lt;/em&gt; and the &lt;em&gt;gir typelib&lt;/em&gt;.. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;install
+ On Fedora/Arch: &lt;span class="s1"&gt;&amp;#39;vte3&amp;#39;&lt;/span&gt; package
+ On Debian/Ubuntu:  &lt;span class="s1"&gt;&amp;#39;gir-1.2-vte-2.*&amp;#39;&lt;/span&gt; package &lt;span class="o"&gt;(&lt;/span&gt;not installed by default&lt;span class="o"&gt;)&lt;/span&gt;
+ On OpenSUSE: &lt;span class="s1"&gt;&amp;#39;typelib-1_0-Vte-2.*&amp;#39;&lt;/span&gt; package &lt;span class="o"&gt;(&lt;/span&gt;not installed by default&lt;span class="o"&gt;)&lt;/span&gt;
+
+Then, log out/restart.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you ever build&lt;sup&gt;3&lt;/sup&gt; your own extension, or find any other extension worth a try, share.. To share is divine!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; &lt;a href="http://www.diffen.com/difference/GNOME_vs_KDE"&gt;http://www.diffen.com/difference/GNOME_vs_KDE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;2&lt;/sup&gt; &lt;a href="https://wiki.gnome.org/Projects"&gt;https://wiki.gnome.org/Projects&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;3&lt;/sup&gt; &lt;a href="https://wiki.gnome.org/Projects/GnomeShell/Extensions/StepByStepTutorial"&gt;https://wiki.gnome.org/Projects/GnomeShell/Extensions/StepByStepTutorial&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="Screenshot" src="/images/shot.png" title="Alt+Tab Gnome3 Shell Extension" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Mon, 27 Apr 2015 14:15:00 +0300</pubDate><guid>tag:prewired.pw,2015-04-27:2015/04/gnome-extension.html</guid><category>Linux</category></item><item><title>Queue &amp; Load Average in Linux</title><link>http://prewired.pw/2015/03/Queue-and-CPULoads.html</link><description>&lt;p&gt;Queue is the current runtime queue for processes. Load averages are measurements of this metric over 5-, 10-, and 15- minute
 intervals. So, the runtime queue is a count of the number of processes ready to run at any given point in time.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;uptime
  14:17pm  up   0:57,  &lt;span class="m"&gt;6&lt;/span&gt; users,  load average: 0.37, 0.54, 0.44
