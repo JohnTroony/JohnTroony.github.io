@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="../../2014/10/testing-shellshock.html" />
+
+    <title>  Prewired &mdash; Testing for ShellShock in Linux (CentOS/OEL)
+</title>
+
+      <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+      <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+
+      <link type="application/atom+xml" rel="alternate" href="/feed/atom.xml"  title="Prewired Atom Feed">
+
+    <link rel="stylesheet" href="../../theme/css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="author" content="John Troon">
+    <meta name="description" content="Bash script; Testing for ShellSchock vulnerability in Enterprise Linux">
+  <meta name="tags" contents="repost, Linux, security, ">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+      <div class="header-image pull-left">
+        <a class="nodec" href="../.."><img src=/images/profile.png></a>
+      </div>
+    <div class="header-inner">
+      <h1 class="header-name">
+        <a class="nodec" href="../..">Prewired</a>
+      </h1>
+      <h3 class="header-text">Random Thoughts Aligned..</h3>
+      <ul class="header-menu list-inline">
+          <li><a class="nodec icon-github" href="https://github.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-twitter" href="https://twitter.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-rss" href="/feed/atom.xml"></a></li>
+      </ul>
+    </div>
+  </div>
+</header> <!-- /.header -->  <div class="container">
+  <div class="post full-post">
+    <h1 class="post-title">
+      <a href="/2014/10/testing-shellshock.html" title="Permalink to Testing for ShellShock in Linux (CentOS/OEL)">Testing for ShellShock in Linux (CentOS/OEL)</a>
+    </h1>
+    <ul class="list-inline">
+      <li class="post-date">
+        <a class="text-muted" href="/2014/10/testing-shellshock.html" title="2014-10-03T16:00:00+03:00">Fri 03 October 2014</a>
+      </li>
+      <li class="muted">&middot;</li>
+      <li class="post-category">
+        <a href="../../category/linux.html">Linux</a>
+      </li>
+        <li class="muted">&middot;</li>
+        <li>
+          <address class="post-author">
+            By <a href="../../author/john-troon.html">John Troon</a>
+          </address>
+        </li>
+    </ul>
+    <div class="post-content">
+      <p>Below is a simple bash script I've been using to test for shellshock vulns in my Linux setups. Though, it's not a script to really decide weather you are totally safe of not, due to the nature of shellshock and other different attack vectors that leverage it.</p>
+<p>Keep following updates from CVE and other Linux news portals. I've been using the script on CentOS 6.5 and Oracle Linux 6.5.. I do understand all bash versions through 4.3 are affected but I discovered even after patching my systems with the first fix updates, my Bash binary was somehow still affected until I did another update/upgrade.</p>
+<hr />
+<div class="highlight"><pre><span class="c">#!/bin/sh</span>
+
+<span class="c"># Adapted from Common Vuls DB</span>
+<span class="c"># Additional tweaks by John Troony.</span>
+
+<span class="c">#Some Color codes</span>
+<span class="nv">red</span><span class="o">=</span><span class="s2">&quot;\033[31m&quot;</span>
+<span class="nv">green</span><span class="o">=</span><span class="s2">&quot;\033[32m&quot;</span>
+<span class="nv">blue</span><span class="o">=</span><span class="s2">&quot;\033[34m&quot;</span>
+<span class="nv">normal</span><span class="o">=</span><span class="s2">&quot;\033[0m&quot;</span>
+
+clear
+
+<span class="nb">echo</span> -e <span class="nv">$blue</span><span class="s2">&quot;Hostname:      </span><span class="nv">$HOSTNAME</span><span class="s2">&quot;</span><span class="nv">$normal</span>
+<span class="nb">echo</span> -e <span class="nv">$blue</span><span class="s2">&quot;Bash Version:  </span><span class="nv">$BASH_VERSION</span><span class="s2">&quot;</span><span class="nv">$normal</span>
+<span class="nb">echo</span> -e <span class="nv">$blue</span><span class="s2">&quot;Machine Type:  </span><span class="nv">$MACHTYPE</span><span class="s2">&quot;</span><span class="nv">$noraml</span>
+<span class="nb">echo</span>
+
+<span class="nv">PATH</span><span class="o">=</span>/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+<span class="c"># We use the default system&#39;s bash unless there is already</span>
+<span class="c"># a $TESTBASH environment variable present</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> ! -x <span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">TESTBASH</span><span class="o">=</span>/bin/bash
+    <span class="k">if</span> <span class="o">[</span> ! -x <span class="nv">$TESTBASH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">TESTBASH</span><span class="o">=</span>/usr/bin/bash
+        <span class="k">if</span> <span class="o">[</span> ! -x <span class="nv">$TESTBASH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+            <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;ERROR: No bash binary to test!&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+            <span class="nb">exit </span>1
+        <span class="k">fi</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+<span class="nb">echo</span> -e  <span class="nv">$green</span><span class="s2">&quot;Checking vulnerabilities in </span><span class="nv">$TESTBASH</span><span class="s2">&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+
+<span class="nv">RUNPATCH</span><span class="o">=</span>0
+
+<span class="c">## CVE-2014-6271</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for CVE-2014-6271...&quot;</span>
+<span class="nv">VULNERABLE</span><span class="o">=</span>0
+<span class="o">(</span>
+   env <span class="s1">&#39;x=() { :;}; echo vulnerable&#39;</span> <span class="s1">&#39;BASH_FUNC_x()=() { :;}; echo vulnerable&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s2">&quot;echo test&quot;</span>
+<span class="o">)</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep <span class="s2">&quot;vulnerable&quot;</span> &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nv">VULNERABLE</span><span class="o">=</span>1
+
+<span class="c">## CVE-2014-6271 (complete patch)</span>
+<span class="o">(</span>
+   env <span class="s1">&#39;x=() { :;}; echo vulnerable&#39;</span> <span class="s1">&#39;BASH_FUNC_x()=() { :;}; echo vulnerable&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s2">&quot;echo test&quot;</span>
+<span class="o">)</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep <span class="s2">&quot;bash: error importing function definition for &#39;x&#39;&quot;</span> &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nv">VULNERABLE</span><span class="o">=</span>1
+
+<span class="k">if</span> <span class="o">[</span> <span class="si">${</span><span class="nv">VULNERABLE</span><span class="si">}</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;vulnerable to CVE-2014-6271&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">V6271</span><span class="o">=</span>1
+    <span class="nv">RUNPATCH</span><span class="o">=</span>1
+<span class="k">else</span>
+    <span class="nv">V6271</span><span class="o">=</span>0
+    <span class="nb">echo</span> -e  <span class="nv">$blue</span><span class="s2">&quot;not vulnerable to CVE-2014-6271&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    :
+<span class="k">fi</span>
+
+<span class="c">## CVE-2014-7169</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for CVE-2014-7169...&quot;</span>
+<span class="nb">cd</span> /tmp
+rm -f <span class="nb">echo</span>
+env -i  <span class="nv">X</span><span class="o">=</span><span class="s1">&#39;() { (a)=&gt;\&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s1">&#39;echo date&#39;</span> &gt;/dev/null 2&gt;/dev/null <span class="c">#&#39;</span>
+<span class="k">if</span> <span class="o">[</span> -f <span class="nb">echo</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;vulnerable to CVE-2014-7169&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">V7169</span><span class="o">=</span>1
+    <span class="nv">RUNPATCH</span><span class="o">=</span>1
+    rm -f <span class="nb">echo</span>
+<span class="k">else</span>
+    <span class="nv">V7169</span><span class="o">=</span>0
+    <span class="nb">echo</span> -e  <span class="nv">$blue</span><span class="s2">&quot;not vulnerable to CVE-2014-7169&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+<span class="k">fi</span>
+
+<span class="c">## CVE-2014-7186</span>
+<span class="c">## I&#39;ve tested in my unpatched CentOS 6.5 Server and it causes a segment fault if CPU is in uprotected mode.</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for CVE-2014-7186...&quot;</span>
+<span class="k">if</span> <span class="nv">$TESTBASH</span> -c <span class="s1">&#39;ulimit -c 0; true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF&#39;</span> 2&gt;/dev/null
+<span class="k">then</span>
+    <span class="nb">echo</span> -e  <span class="nv">$blue</span><span class="s2">&quot;not vulnerable to CVE-2014-7186&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">V7186</span><span class="o">=</span>0
+<span class="k">else</span>
+    <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;vulnerable to CVE-2014-7186&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">V7186</span><span class="o">=</span>1
+    <span class="nv">RUNPATCH</span><span class="o">=</span>1
+<span class="k">fi</span>
+
+<span class="c">## CVE-2014-7187</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for  CVE-2014-7187...&quot;</span>
+perl -e <span class="s1">&#39;for my $x (1..200) { print &quot;for x$x in ; do :\n&quot;; } for my $x (1..200) { print &quot;done\n&quot; }&#39;</span> &gt; /tmp/test_script.<span class="nv">$$</span>.sh
+<span class="k">if</span> <span class="nv">$TESTBASH</span> /tmp/test_script.<span class="nv">$$</span>.sh 2&gt;/dev/null &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> -e  <span class="nv">$blue</span><span class="s2">&quot;not vulnerable to CVE-2014-7187&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">V7187</span><span class="o">=</span>0
+<span class="k">else</span>
+    <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;vulnerable to CVE-2014-7187&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">V7187</span><span class="o">=</span>1
+    <span class="nv">RUNPATCH</span><span class="o">=</span>1
+<span class="k">fi</span>
+
+<span class="nv">EXITCODE</span><span class="o">=</span>1
+<span class="nb">echo</span>
+<span class="k">if</span> <span class="o">[</span> <span class="si">${</span><span class="nv">RUNPATCH</span><span class="si">}</span> <span class="o">=</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c"># Check OS version</span>
+
+    <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2"> has some vulns that requires patching.&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="k">case</span> <span class="sb">`</span>gvquery -p os_dist 2&gt; /dev/null<span class="sb">`</span> in
+        solaris*<span class="o">)</span>
+            <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$V6271</span><span class="s2"> </span><span class="nv">$V7169</span><span class="s2"> </span><span class="nv">$V7186</span><span class="s2"> </span><span class="nv">$V7187</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;0 0 0 1&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="nb">echo</span> -e  <span class="nv">$green</span><span class="s2">&quot;Oracle does not have a patch for CVE-2014-7187 yet for this OS&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+                <span class="nv">EXITCODE</span><span class="o">=</span>0
+            <span class="k">fi</span>
+            <span class="p">;;</span>
+        *<span class="o">)</span>
+            :
+            <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> -e  <span class="nv">$green</span><span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2"> does not have any known shellshock-related vulnerabilities.&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
+    <span class="nv">EXITCODE</span><span class="o">=</span>0
+<span class="k">fi</span>
+<span class="nb">echo</span> -e <span class="nv">$blue</span><span class="s2">&quot;NB: This script checks for common identified vulns only.. Please check online for more updated details&quot;</span><span class="nv">$normal</span>
+<span class="nb">exit</span> <span class="nv">$EXITCODE</span>
+</pre></div>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="col-md-8 col-md-offset-2">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'Prewired';
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript=Prewired">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+    <a href="https://disqus.com" class="dsq-brlink">
+      blog comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+  </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+    </p>
+    <div class="text-center">
+      Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
+    </div>
+  </div>
+</footer> <!-- /.footer -->
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+</body> <!-- 42 -->
+
+</html>

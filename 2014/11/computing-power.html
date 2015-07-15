@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="../../2014/11/computing-power.html" />
+
+    <title>  Prewired &mdash; Are we taking advantage of the computing power we have?
+</title>
+
+      <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+      <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+
+      <link type="application/atom+xml" rel="alternate" href="/feed/atom.xml"  title="Prewired Atom Feed">
+
+    <link rel="stylesheet" href="../../theme/css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="author" content="John Troon">
+    <meta name="description" content="Considerations in software design for multi-core multiprocessor architectures">
+  <meta name="tags" contents="repost, ">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+      <div class="header-image pull-left">
+        <a class="nodec" href="../.."><img src=/images/profile.png></a>
+      </div>
+    <div class="header-inner">
+      <h1 class="header-name">
+        <a class="nodec" href="../..">Prewired</a>
+      </h1>
+      <h3 class="header-text">Random Thoughts Aligned..</h3>
+      <ul class="header-menu list-inline">
+          <li><a class="nodec icon-github" href="https://github.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-twitter" href="https://twitter.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-rss" href="/feed/atom.xml"></a></li>
+      </ul>
+    </div>
+  </div>
+</header> <!-- /.header -->  <div class="container">
+  <div class="post full-post">
+    <h1 class="post-title">
+      <a href="/2014/11/computing-power.html" title="Permalink to Are we taking advantage of the computing power we have?">Are we taking advantage of the computing power we have?</a>
+    </h1>
+    <ul class="list-inline">
+      <li class="post-date">
+        <a class="text-muted" href="/2014/11/computing-power.html" title="2014-11-16T09:28:00+03:00">Sun 16 November 2014</a>
+      </li>
+      <li class="muted">&middot;</li>
+      <li class="post-category">
+        <a href="../../category/computing.html">Computing</a>
+      </li>
+        <li class="muted">&middot;</li>
+        <li>
+          <address class="post-author">
+            By <a href="../../author/john-troon.html">John Troon</a>
+          </address>
+        </li>
+    </ul>
+    <div class="post-content">
+      <p>Computing power is ever increasing not just with high clock cycles but with multiple logical processors referred as cores. Clock cycles determine the number of instructions a processor can process within a given interval of time. The more the number of clocks, the more the instructions potentially executed in terms of KHz (thousands of operations per second), MHz (millions of operations per second), and the current GHz (billions of operations per second).</p>
+<p>A Core has it's own ALU and caches L2 and L3, among other elements to carry out instructions. Basically, cores (logical processors) enable parallel execution of different parts of a program, or even different programs, simultaneously. These new generation architectures, makes the OS assume there are more than one processor in the system even though there is a single physical chip on board.</p>
+<p>Generally speaking, a machine with a low clock cycle speed but with multiple cores can be faster compared to a machine with a single processor and high clock cycle speeds. However, I've had both bad times and good times while trying to crunch some “big-data”, encrypting huge file-system etc. It's so frustrating when you get low speeds while using these modern high-end machines for your day-to-day computing.</p>
+<p>Having a high-end machine (Laptop/Desktop/Server) doesn't necessary mean you'll automatically have the best computing experience.. The problem is not always with your hardware but the architecture of the software using these new generation processors.</p>
+<p>So, what's the importance of having a laptop with 4 cores if only 1 core is operating while the rest of the cores sleep? I mean, it's like employing 4 employees and while 1 is working, the rest just eat and fart in your office.</p>
+<p>People who use their computers for basic computing like editing files, working with ledgers, watching a movie etc won't really notice any serious performance issues compared to a programmer compiling application from source code or a SysAdmin who is trying to compress and backup gigabytes of data.</p>
+<h2>Simple Test</h2>
+<p>As a simple test, I'm using my Laptop ( i7-2640M, sandy-bridge, 4 Cores each with 2.80 GHz) running Debian to compress two files with bzip2 then compare the results with pbzip2. Well, there is a performance note about bzip2 (block-sorting file compressor) on it's man page and pbzip2 is a parallel implementation of the bzip2 that uses pthreads and achieves near-linear speedup on SMP machines.</p>
+<p><img alt="Compression Test" src="/images/1.png" /></p>
+<p>Using pbzip2 was faster compared to bzip2 and the following screen shots shows the CPU history for both respectively.</p>
+<p><strong>pbzip2 CPU history:</strong></p>
+<p><img alt="pbzip2 CPU history" src="/images/2.png" /></p>
+<p><strong>bzip2 CPU history:</strong></p>
+<p><img alt="bzip2 CPU history" src="/images/3.png" /></p>
+<p><code>pbzip</code> makes use of the four CPUs to compress the files and the result is far impressive compared to using <code>bzip2</code>. I've avoided the nitty gritty details of bzip2/pbzip since this is not a post about the tools. However, you can explore pbzip and set other options like Load average and Block size. I tried reading the files to be compressed into memory then split the compression work among the CPUs with pbzip and the performance was still good.</p>
+<p><img alt="pbzip Performance" src="/images/4.png" /></p>
+<p><img alt="pbzip Performance" src="/images/5.png" /></p>
+<h2>Conclusion:</h2>
+<p>Are we really making use of the computing power we have?
+We can only make good use of these powerful computation resources if we design our applications and programs to take advantage of the power in the underlying hardware they run on, be it in a distributed environment, cloud computing or in a simple multi-core computer.</p>
+<p>Mission critical systems need a system analysts who can identify common bottlenecks and other performance issues that can be resolved or even design new parallel algorithms in the application stack.</p>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="col-md-8 col-md-offset-2">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'Prewired';
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript=Prewired">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+    <a href="https://disqus.com" class="dsq-brlink">
+      blog comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+  </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+    </p>
+    <div class="text-center">
+      Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
+    </div>
+  </div>
+</footer> <!-- /.footer -->
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+</body> <!-- 42 -->
+
+</html>

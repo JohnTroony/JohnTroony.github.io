@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="../../2014/08/SSH-with-2FA.html" />
+
+    <title>  Prewired &mdash; Setting up SSH With Two-Factor Authentication
+</title>
+
+      <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+      <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+
+      <link type="application/atom+xml" rel="alternate" href="/feed/atom.xml"  title="Prewired Atom Feed">
+
+    <link rel="stylesheet" href="../../theme/css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="author" content="John Troon">
+    <meta name="description" content="Using 2FA to protect SSH">
+  <meta name="tags" contents="repost, Linux, ">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+      <div class="header-image pull-left">
+        <a class="nodec" href="../.."><img src=/images/profile.png></a>
+      </div>
+    <div class="header-inner">
+      <h1 class="header-name">
+        <a class="nodec" href="../..">Prewired</a>
+      </h1>
+      <h3 class="header-text">Random Thoughts Aligned..</h3>
+      <ul class="header-menu list-inline">
+          <li><a class="nodec icon-github" href="https://github.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-twitter" href="https://twitter.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-rss" href="/feed/atom.xml"></a></li>
+      </ul>
+    </div>
+  </div>
+</header> <!-- /.header -->  <div class="container">
+  <div class="post full-post">
+    <h1 class="post-title">
+      <a href="/2014/08/SSH-with-2FA.html" title="Permalink to Setting up SSH With Two-Factor Authentication">Setting up SSH With Two-Factor Authentication</a>
+    </h1>
+    <ul class="list-inline">
+      <li class="post-date">
+        <a class="text-muted" href="/2014/08/SSH-with-2FA.html" title="2014-08-19T09:00:00+03:00">Tue 19 August 2014</a>
+      </li>
+      <li class="muted">&middot;</li>
+      <li class="post-category">
+        <a href="../../category/linux.html">Linux</a>
+      </li>
+        <li class="muted">&middot;</li>
+        <li>
+          <address class="post-author">
+            By <a href="../../author/john-troon.html">John Troon</a>
+          </address>
+        </li>
+    </ul>
+    <div class="post-content">
+      <p>Two-factor authentication adds a second level of authentication to an account log-in. When you have to enter only your username and one password, that's considered as a single-factor authentication. 2FA requires the user to have two out of three types of credentials before being able to access an account. The three types are:</p>
+<ul>
+<li>Something you know, such as a Personal Identification Number (PIN), password, or a pattern</li>
+<li>Something you have, such as an ATM card or phone</li>
+<li>Something you are, such as a biometric like a fingerprint or voice print</li>
+</ul>
+<p><a href="http://www.cnet.com">Source: cnet.com</a></p>
+<hr />
+<p>Well, with SSH we can use Google Authenticator PAM module to add another level of security to the normal login. This can be a good idea if you have a cloud instance such as AWS services. I personally would like to endorse both our local robust cloud infrastructure built to support a wide range of applications, <a href="http://www.kili.io">KILI</a> and <a href="http://www.angani.co">Angani</a>.</p>
+<p>Before setting up the 2FA, make sure you have the <code>google authenticator</code> app installed on your phone, you can get support on how to install the app on Android, Blackberry or Apple device <a href="https://support.google.com/accounts/answer/1066447?hl=en">here</a></p>
+<p>Now, decide which account you want to setup the 2FA for, I mean, if you use a normal account, you'll not be able to login as root. (I love root :D ). If you love root like me, login as root and follow along. I've my "google authenticator" app installed on my crappy Samsung phone running Android 4.2.2 and I'm setting up 2FA on Ubuntu 14.x</p>
+<hr />
+<h3>1) Install required applications</h3>
+<div class="highlight"><pre>apt-get install libpam-google-authenticator
+</pre></div>
+
+
+<p>On CentOS you will need to install <code>libpam-google-authenticator</code> from the source file.</p>
+<div class="highlight"><pre>yum -y groupinstall <span class="s2">&quot;Development Tools&quot;</span>
+yum install pam-devel
+yum -y install ntp
+wget https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2
+bunzip2 libpam-google-authenticator-1.0-source.tar.bz2
+tar -xvf libpam-google-authenticator-1.0-source.tar
+<span class="nb">cd </span>libpam-google-authenticator-1.0/
+make
+make install
+</pre></div>
+
+
+<h3>2) Set up config files</h3>
+<p>a) Open <code>/etc/pam.d/sshd</code> with your favourite editor and add the following line </p>
+<div class="highlight"><pre>auth required pam_google_authenticator.so
+</pre></div>
+
+
+<p>Make sure to save the changes.</p>
+<p>b) Then open <code>/etc/ssh/sshd_config</code> with your favourite file editor (again) and search for </p>
+<div class="highlight"><pre>ChallengeResponseAuthentication no
+</pre></div>
+
+
+<p>replace the <code>no</code> with a <code>yes</code> and save the changes.</p>
+<h3>3) Setup the google-authenticator</h3>
+<p>Still on the account to set-up, enter the command on the terminal:</p>
+<div class="highlight"><pre>google-authenticator
+</pre></div>
+
+
+<p>This will enable you setup the google-authenticator through a series of yes (y) and no (n) questions. 
+Make sure you select <code>time-based</code> for   better security service, and save updates in the default file... 
+You can follow along the other questions (they are easy pizzy and depends with your preferences).</p>
+<p>NB: after chosing <code>Y</code> in the first option (authentication tokens to be time-based), a new secret key, 
+verification code and an emergency scratch codes are generated with barcode also. </p>
+<p>After setting up the options to your preference(s), restart the ssh-server:
+<code>service ssh restart</code></p>
+<p>Make sure on your system, the time is correctly set with the same time zone on your phone. I don't want to overemphasis on this, but you     need ntpd runninig on your system. </p>
+<p>On Ubuntu <code>apt-get install ntp</code> while on CentOS <code>yum -y install ntp</code> then start <code>ntpd</code> and enable it on System boot.</p>
+<h3>4) Linking the APP on our    phone...</h3>
+<p>Open the google-authenticator app on your phone and select the <em>add on account</em> option, then tap on the <em>Enter key provided</em> and enter your secret key.</p>
+<p>NB: You can choose <em>scan a barcode</em> and scan the generated barcode but that didn't work for me.</p>
+<h3>5) Now test the set up....</h3>
+<p>Try login from a diffrent computer... You should get a verification prompt before the password/login-in for guys using ssh-keys.
+<em>Done!!</em></p>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="col-md-8 col-md-offset-2">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'Prewired';
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript=Prewired">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+    <a href="https://disqus.com" class="dsq-brlink">
+      blog comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+  </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+    </p>
+    <div class="text-center">
+      Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
+    </div>
+  </div>
+</footer> <!-- /.footer -->
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+</body> <!-- 42 -->
+
+</html>
