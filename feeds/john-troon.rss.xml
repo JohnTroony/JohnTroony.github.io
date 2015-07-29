@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prewired</title><link>http://prewired.pw/</link><description></description><atom:link href="http://prewired.pw/feeds/john-troon.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 27 Apr 2015 14:15:00 +0300</lastBuildDate><item><title>Rocking it! GNOME3 Shell Extensions..</title><link>http://prewired.pw/2015/04/gnome-extension.html</link><description>&lt;p&gt;I don't really give a tinker's damn about your desktop, if you have a picture of a unicorn as your wallpaper or a really old picture of Hitler smiling, that's up to you. Though, sometimes I do care about having my files/folders arranged, in a way I can remember everything on a "where-is-X" basis, and adjusting system's default settings.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prewired</title><link>http://prewired.pw/</link><description></description><atom:link href="http://prewired.pw/feeds/john-troon.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 27 Jul 2015 09:28:00 +0300</lastBuildDate><item><title>Group Dynamics - extreme group conformity...</title><link>http://prewired.pw/2015/07/group-dynamics.html</link><description>&lt;p&gt;&lt;img alt="Group Dynamics" src="/images/dynamic.png" /&gt;&lt;/p&gt;
+&lt;p&gt;There is this new belief system of group productivity everywhere, from corporate to schools. At work places, we have open offices, team building and all sorts of group work but what we are forgetting is that solitude is an important ingredient to productivity.. When we just rely on group-work and teams, sometimes we do forget what we are capable of doing independently.&lt;/p&gt;
+&lt;p&gt;People are different, we have introverts, extroverts and those who enjoy these two different worlds, ambiverts.  Introverts like spending some “alone” time, their inner world is much more stimulating and rewarding to them as opposed to extroverts. The point here is, groups are composed of different people, who yield results differently, embrace that.. The IT industry lucky enough, understand this concept better than any other industry, look at Google Inc. for instance, employees have a sense of freedom yet they also collaborate to produce world leading products and services...&lt;/p&gt;
+&lt;p&gt;Most, if not all of the fabulous Eureka moments were found on a solitude time away from the influence of group dynamics. Newton sitting under a tree, a fruit fell on his head,  gravity. Albert Einstein - father of modern physics, Graham Bell - invented the first practical telephone, and the list goes down..&lt;/p&gt;
+&lt;p&gt;From contemporary psychology, it turns out we can't be in a group of people without instinctively mimicking their opinions. You will start aping the beliefs of the people around you without even realizing that's what you are doing! Group seamlessly follow the opinion of the most dominating or charismatic person in the room even though there is zero correlation between being the best talker and having the best ideas. You might follow this person with the best ideas but you might not…. And you really want to leave it up to chance.&lt;/p&gt;
+&lt;p&gt;It's much better for everyone to go off by themselves, do research and generate their own ideas freed from the distortion of group dynamics and then come together in as a team/group to talk them through in a well managed environment and take it from there.&lt;/p&gt;
+&lt;p&gt;The more freedom that we give to team/group workers the more likely that they are to come up with unique solutions to the problems.. Sometimes we need to get into our own head, so stop the madness of constant group work and encourage people to think! There should be a balance between group work and personal work to increase creativity and importantly, personal growth.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;P.S.&lt;/strong&gt; Read “Quiet: The Power of Introverts in a World That Can't Stop Talking” – By Susan Cain&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Mon, 27 Jul 2015 09:28:00 +0300</pubDate><guid>tag:prewired.pw,2015-07-27:2015/07/group-dynamics.html</guid><category>Random</category></item><item><title>Rocking it! GNOME3 Shell Extensions..</title><link>http://prewired.pw/2015/04/gnome-extension.html</link><description>&lt;p&gt;I don't really give a tinker's damn about your desktop, if you have a picture of a unicorn as your wallpaper or a really old picture of Hitler smiling, that's up to you. Though, sometimes I do care about having my files/folders arranged, in a way I can remember everything on a "where-is-X" basis, and adjusting system's default settings.&lt;/p&gt;
 &lt;p&gt;What GNOME offers, even after a fresh install without tweaks, is satisfying. There are decent unbiased articles&lt;sup&gt;1&lt;/sup&gt; written specifically about GNOME features and comparison made against KDE. Both Desktop-environments have their strengths and  weaknesses, choosing what fits you is kind of religious and experimental.&lt;/p&gt;
 &lt;p&gt;The list of projects&lt;sup&gt;2&lt;/sup&gt; covered under GNOME is long. Here, I simply searched for some &lt;a href="https://extensions.gnome.org/"&gt;extensions&lt;/a&gt; that are potentially helpful, below is a list of what I picked:&lt;/p&gt;
 &lt;ul&gt;
@@ -149,4 +156,282 @@ new key is signed by my old key:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Just incase you need to clarify anything about my GnuPG keys, reach me via &lt;strong&gt;jayombagi at gmail dot com&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Thu, 12 Feb 2015 16:28:00 +0300</pubDate><guid>tag:prewired.pw,2015-02-12:2015/02/New-GPG.html</guid><category>GPG</category><category>security</category></item></channel></rss>
+&lt;p&gt;Just incase you need to clarify anything about my GnuPG keys, reach me via &lt;strong&gt;jayombagi at gmail dot com&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Thu, 12 Feb 2015 16:28:00 +0300</pubDate><guid>tag:prewired.pw,2015-02-12:2015/02/New-GPG.html</guid><category>GPG</category><category>security</category></item><item><title>Are we taking advantage of the computing power we have?</title><link>http://prewired.pw/2014/11/computing-power.html</link><description>&lt;p&gt;Computing power is ever increasing not just with high clock cycles but with multiple logical processors referred as cores. Clock cycles determine the number of instructions a processor can process within a given interval of time. The more the number of clocks, the more the instructions potentially executed in terms of KHz (thousands of operations per second), MHz (millions of operations per second), and the current GHz (billions of operations per second).&lt;/p&gt;
+&lt;p&gt;A Core has it's own ALU and caches L2 and L3, among other elements to carry out instructions. Basically, cores (logical processors) enable parallel execution of different parts of a program, or even different programs, simultaneously. These new generation architectures, makes the OS assume there are more than one processor in the system even though there is a single physical chip on board.&lt;/p&gt;
+&lt;p&gt;Generally speaking, a machine with a low clock cycle speed but with multiple cores can be faster compared to a machine with a single processor and high clock cycle speeds. However, I've had both bad times and good times while trying to crunch some “big-data”, encrypting huge file-system etc. It's so frustrating when you get low speeds while using these modern high-end machines for your day-to-day computing.&lt;/p&gt;
+&lt;p&gt;Having a high-end machine (Laptop/Desktop/Server) doesn't necessary mean you'll automatically have the best computing experience.. The problem is not always with your hardware but the architecture of the software using these new generation processors.&lt;/p&gt;
+&lt;p&gt;So, what's the importance of having a laptop with 4 cores if only 1 core is operating while the rest of the cores sleep? I mean, it's like employing 4 employees and while 1 is working, the rest just eat and fart in your office.&lt;/p&gt;
+&lt;p&gt;People who use their computers for basic computing like editing files, working with ledgers, watching a movie etc won't really notice any serious performance issues compared to a programmer compiling application from source code or a SysAdmin who is trying to compress and backup gigabytes of data.&lt;/p&gt;
+&lt;h2&gt;Simple Test&lt;/h2&gt;
+&lt;p&gt;As a simple test, I'm using my Laptop ( i7-2640M, sandy-bridge, 4 Cores each with 2.80 GHz) running Debian to compress two files with bzip2 then compare the results with pbzip2. Well, there is a performance note about bzip2 (block-sorting file compressor) on it's man page and pbzip2 is a parallel implementation of the bzip2 that uses pthreads and achieves near-linear speedup on SMP machines.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Compression Test" src="/images/1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Using pbzip2 was faster compared to bzip2 and the following screen shots shows the CPU history for both respectively.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pbzip2 CPU history:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pbzip2 CPU history" src="/images/2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bzip2 CPU history:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bzip2 CPU history" src="/images/3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pbzip&lt;/code&gt; makes use of the four CPUs to compress the files and the result is far impressive compared to using &lt;code&gt;bzip2&lt;/code&gt;. I've avoided the nitty gritty details of bzip2/pbzip since this is not a post about the tools. However, you can explore pbzip and set other options like Load average and Block size. I tried reading the files to be compressed into memory then split the compression work among the CPUs with pbzip and the performance was still good.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pbzip Performance" src="/images/4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pbzip Performance" src="/images/5.png" /&gt;&lt;/p&gt;
+&lt;h2&gt;Conclusion:&lt;/h2&gt;
+&lt;p&gt;Are we really making use of the computing power we have?
+We can only make good use of these powerful computation resources if we design our applications and programs to take advantage of the power in the underlying hardware they run on, be it in a distributed environment, cloud computing or in a simple multi-core computer.&lt;/p&gt;
+&lt;p&gt;Mission critical systems need a system analysts who can identify common bottlenecks and other performance issues that can be resolved or even design new parallel algorithms in the application stack.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Sun, 16 Nov 2014 09:28:00 +0300</pubDate><guid>tag:prewired.pw,2014-11-16:2014/11/computing-power.html</guid><category>repost</category></item><item><title>Testing for ShellShock in Linux (CentOS/OEL)</title><link>http://prewired.pw/2014/10/testing-shellshock.html</link><description>&lt;p&gt;Below is a simple bash script I've been using to test for shellshock vulns in my Linux setups. Though, it's not a script to really decide weather you are totally safe of not, due to the nature of shellshock and other different attack vectors that leverage it.&lt;/p&gt;
+&lt;p&gt;Keep following updates from CVE and other Linux news portals. I've been using the script on CentOS 6.5 and Oracle Linux 6.5.. I do understand all bash versions through 4.3 are affected but I discovered even after patching my systems with the first fix updates, my Bash binary was somehow still affected until I did another update/upgrade.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="c"&gt;# Adapted from Common Vuls DB&lt;/span&gt;
+&lt;span class="c"&gt;# Additional tweaks by John Troony.&lt;/span&gt;
+
+&lt;span class="c"&gt;#Some Color codes&lt;/span&gt;
+&lt;span class="nv"&gt;red&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;\033[31m&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;green&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;\033[32m&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;blue&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;\033[34m&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;normal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;\033[0m&amp;quot;&lt;/span&gt;
+
+clear
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hostname:      &lt;/span&gt;&lt;span class="nv"&gt;$HOSTNAME&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Bash Version:  &lt;/span&gt;&lt;span class="nv"&gt;$BASH_VERSION&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Machine Type:  &lt;/span&gt;&lt;span class="nv"&gt;$MACHTYPE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$noraml&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;
+
+&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+&lt;span class="c"&gt;# We use the default system&amp;#39;s bash unless there is already&lt;/span&gt;
+&lt;span class="c"&gt;# a $TESTBASH environment variable present&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$TESTBASH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -x &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$TESTBASH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nv"&gt;TESTBASH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/bin/bash
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -x &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+        &lt;span class="nv"&gt;TESTBASH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/bash
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -x &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+            &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$red&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ERROR: No bash binary to test!&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+            &lt;span class="nb"&gt;exit &lt;/span&gt;1
+        &lt;span class="k"&gt;fi&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$green&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Checking vulnerabilities in &lt;/span&gt;&lt;span class="nv"&gt;$TESTBASH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+
+&lt;span class="nv"&gt;RUNPATCH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="c"&gt;## CVE-2014-6271&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\nChecking for CVE-2014-6271...&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;VULNERABLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;span class="o"&gt;(&lt;/span&gt;
+   env &lt;span class="s1"&gt;&amp;#39;x=() { :;}; echo vulnerable&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;BASH_FUNC_x()=() { :;}; echo vulnerable&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; -c &lt;span class="s2"&gt;&amp;quot;echo test&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;)&lt;/span&gt; 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;&amp;quot;vulnerable&amp;quot;&lt;/span&gt; &amp;gt;/dev/null 2&amp;gt;/dev/null &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;VULNERABLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+
+&lt;span class="c"&gt;## CVE-2014-6271 (complete patch)&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;
+   env &lt;span class="s1"&gt;&amp;#39;x=() { :;}; echo vulnerable&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;BASH_FUNC_x()=() { :;}; echo vulnerable&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; -c &lt;span class="s2"&gt;&amp;quot;echo test&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;)&lt;/span&gt; 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;&amp;quot;bash: error importing function definition for &amp;#39;x&amp;#39;&amp;quot;&lt;/span&gt; &amp;gt;/dev/null 2&amp;gt;/dev/null &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;VULNERABLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;VULNERABLE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; -eq &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$red&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;vulnerable to CVE-2014-6271&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;V6271&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+    &lt;span class="nv"&gt;RUNPATCH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nv"&gt;V6271&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;not vulnerable to CVE-2014-6271&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    :
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c"&gt;## CVE-2014-7169&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\nChecking for CVE-2014-7169...&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
+rm -f &lt;span class="nb"&gt;echo&lt;/span&gt;
+env -i  &lt;span class="nv"&gt;X&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;() { (a)=&amp;gt;\&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; -c &lt;span class="s1"&gt;&amp;#39;echo date&amp;#39;&lt;/span&gt; &amp;gt;/dev/null 2&amp;gt;/dev/null &lt;span class="c"&gt;#&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$red&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;vulnerable to CVE-2014-7169&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;V7169&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+    &lt;span class="nv"&gt;RUNPATCH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+    rm -f &lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nv"&gt;V7169&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;not vulnerable to CVE-2014-7169&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c"&gt;## CVE-2014-7186&lt;/span&gt;
+&lt;span class="c"&gt;## I&amp;#39;ve tested in my unpatched CentOS 6.5 Server and it causes a segment fault if CPU is in uprotected mode.&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\nChecking for CVE-2014-7186...&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; -c &lt;span class="s1"&gt;&amp;#39;ulimit -c 0; true &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF &amp;lt;&amp;lt;EOF&amp;#39;&lt;/span&gt; 2&amp;gt;/dev/null
+&lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;not vulnerable to CVE-2014-7186&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;V7186&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$red&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;vulnerable to CVE-2014-7186&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;V7186&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+    &lt;span class="nv"&gt;RUNPATCH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c"&gt;## CVE-2014-7187&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\nChecking for  CVE-2014-7187...&amp;quot;&lt;/span&gt;
+perl -e &lt;span class="s1"&gt;&amp;#39;for my $x (1..200) { print &amp;quot;for x$x in ; do :\n&amp;quot;; } for my $x (1..200) { print &amp;quot;done\n&amp;quot; }&amp;#39;&lt;/span&gt; &amp;gt; /tmp/test_script.&lt;span class="nv"&gt;$$&lt;/span&gt;.sh
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;$TESTBASH&lt;/span&gt; /tmp/test_script.&lt;span class="nv"&gt;$$&lt;/span&gt;.sh 2&amp;gt;/dev/null &amp;gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;not vulnerable to CVE-2014-7187&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;V7187&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$red&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;vulnerable to CVE-2014-7187&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;V7187&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+    &lt;span class="nv"&gt;RUNPATCH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="nv"&gt;EXITCODE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+&lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;RUNPATCH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="c"&gt;# Check OS version&lt;/span&gt;
+
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$red&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$TESTBASH&lt;/span&gt;&lt;span class="s2"&gt; has some vulns that requires patching.&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;gvquery -p os_dist 2&amp;gt; /dev/null&lt;span class="sb"&gt;`&lt;/span&gt; in
+        solaris*&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$V6271&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$V7169&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$V7186&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$V7187&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;0 0 0 1&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+                &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$green&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Oracle does not have a patch for CVE-2014-7187 yet for this OS&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+                &lt;span class="nv"&gt;EXITCODE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+            &lt;span class="k"&gt;fi&lt;/span&gt;
+            &lt;span class="p"&gt;;;&lt;/span&gt;
+        *&lt;span class="o"&gt;)&lt;/span&gt;
+            :
+            &lt;span class="p"&gt;;;&lt;/span&gt;
+    &lt;span class="k"&gt;esac&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -e  &lt;span class="nv"&gt;$green&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$TESTBASH&lt;/span&gt;&lt;span class="s2"&gt; does not have any known shellshock-related vulnerabilities.&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2
+    &lt;span class="nv"&gt;EXITCODE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;NB: This script checks for common identified vulns only.. Please check online for more updated details&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt;
+&lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$EXITCODE&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Fri, 03 Oct 2014 16:00:00 +0300</pubDate><guid>tag:prewired.pw,2014-10-03:2014/10/testing-shellshock.html</guid><category>repost</category><category>Linux</category><category>security</category></item><item><title>The "SCTP" protocol</title><link>http://prewired.pw/2014/09/SCTP-protocol.html</link><description>&lt;p&gt;TCP and UDP protocols have been in around for approximately 20+ years now. Even though they have helped in building nice Internet applications since inception, things are changing in the techie world and they will always change. TCP being a connection state protocol while UDP a connectionless state protocol, there have been attempts to build a general purpose protocol above the IP layer, SCTP so far is the only one endorsed by the IETF.&lt;/p&gt;
+&lt;p&gt;SCTP combines concepts from TCP and UDP for even better control over the transport of packets (with additional API calls for SCTP). TCP applications can be ported to SCTP.&lt;/p&gt;
+&lt;h3&gt;Some cool Features:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;More Support for multi-homed devices:&lt;/strong&gt; 
+Laptops these days can come with more than one in-built Ethernet cards, wireless cards, wiMAX cards and Bluetooth... Hence, a minimal laptop can at-least have 3 distinct IP network interfaces. SCTP support selective choosing of interfaces with ability to add and drop interfaces dynamically. You can unplug your machine from an Ethernet network, and an Internet application immediately pick up with existing wifi connection etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Whoo! Multi-streaming:&lt;/strong&gt;
+An application doesn't need multiple sockets rather a single socket that can be used for multiple streams to a connected host! Let's say the X Window System is connecting on multiple ports, with SCTP, these could all be separate streams on a single association. Fast-Browsing!, HTML docs containing referenced image files or other media files, they will load faster with SCTP compared in TCP. HTTP use separate TCP connection per downloaded URL, even with HTTP 1.1 "persistent connections" it's still expensive. With SCTP, the separate media files could be downloaded concurrently in separate streams on a single association.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No “out of band”... :&lt;/strong&gt; 
+SCTP has no “out of band” messages, but a large number of events can be interleaved onto a single association, so that an application can monitor the state of the association (e.g. when the other end adds another interface to the association).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Greater socket range:&lt;/strong&gt; 
+The range of socket options is greater than TCP or UDP. These also can be used to control individual associations or individual streams within a single association. For example, messages on one stream can be given a longer time-to-live than messages on other streams, increasing the likelihood of their delivery.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Do more with single socket:&lt;/strong&gt; 
+A single socket can support multiple associations, that is, a computer can use a single socket to talk to more than one computer. This is not multicast, but it could be useful in peer-to-peer situations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Still message-oriented.. :&lt;/strong&gt; 
+TCP is a byte-oriented protocol, and UDP is message-oriented. The majority of applications are message-oriented, and applications using TCP have to jump through hoops, such as sending the message length as a first parameter. SCTP is message-oriented, so such tricks are not so necessary.&lt;/p&gt;
+&lt;p&gt;It is no longer necessary to open up multiple sockets; instead, a single socket can be used for multiple streams to a connected host. SCTP tries to provide a more reliable and robust protocol than either TCP or UDP. Btw, SCTP is not in any Microsoft release, another reason to love Linux? :)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Resources&lt;/h3&gt;
+&lt;p&gt;The Main Site for SCTP - &lt;a href="http://www.sctp.de/"&gt;http://www.sctp.de/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Linux Kernel Project Home Page - &lt;a href="https://lists.sourceforge.net/lists/listinfo/lksctp-developers"&gt;https://lists.sourceforge.net/lists/listinfo/lksctp-developers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Stream Control Transmission Protocol - &lt;a href="http://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol"&gt;http://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Overview of SCTP (Stream Control Transmission Protocol) - &lt;a href="http://www.slideshare.net/PeterREgli/overview-of-sctp-transport-protocol"&gt;http://www.slideshare.net/PeterREgli/overview-of-sctp-transport-protocol&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Sun, 07 Sep 2014 12:28:00 +0300</pubDate><guid>tag:prewired.pw,2014-09-07:2014/09/SCTP-protocol.html</guid><category>repost</category></item><item><title>Setting up SSH With Two-Factor Authentication</title><link>http://prewired.pw/2014/08/SSH-with-2FA.html</link><description>&lt;p&gt;Two-factor authentication adds a second level of authentication to an account log-in. When you have to enter only your username and one password, that's considered as a single-factor authentication. 2FA requires the user to have two out of three types of credentials before being able to access an account. The three types are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Something you know, such as a Personal Identification Number (PIN), password, or a pattern&lt;/li&gt;
+&lt;li&gt;Something you have, such as an ATM card or phone&lt;/li&gt;
+&lt;li&gt;Something you are, such as a biometric like a fingerprint or voice print&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://www.cnet.com"&gt;Source: cnet.com&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Well, with SSH we can use Google Authenticator PAM module to add another level of security to the normal login. This can be a good idea if you have a cloud instance such as AWS services. I personally would like to endorse both our local robust cloud infrastructure built to support a wide range of applications, &lt;a href="http://www.kili.io"&gt;KILI&lt;/a&gt; and &lt;a href="http://www.angani.co"&gt;Angani&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before setting up the 2FA, make sure you have the &lt;code&gt;google authenticator&lt;/code&gt; app installed on your phone, you can get support on how to install the app on Android, Blackberry or Apple device &lt;a href="https://support.google.com/accounts/answer/1066447?hl=en"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now, decide which account you want to setup the 2FA for, I mean, if you use a normal account, you'll not be able to login as root. (I love root :D ). If you love root like me, login as root and follow along. I've my "google authenticator" app installed on my crappy Samsung phone running Android 4.2.2 and I'm setting up 2FA on Ubuntu 14.x&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;1) Install required applications&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install libpam-google-authenticator
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On CentOS you will need to install &lt;code&gt;libpam-google-authenticator&lt;/code&gt; from the source file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yum -y groupinstall &lt;span class="s2"&gt;&amp;quot;Development Tools&amp;quot;&lt;/span&gt;
+yum install pam-devel
+yum -y install ntp
+wget https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2
+bunzip2 libpam-google-authenticator-1.0-source.tar.bz2
+tar -xvf libpam-google-authenticator-1.0-source.tar
+&lt;span class="nb"&gt;cd &lt;/span&gt;libpam-google-authenticator-1.0/
+make
+make install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;2) Set up config files&lt;/h3&gt;
+&lt;p&gt;a) Open &lt;code&gt;/etc/pam.d/sshd&lt;/code&gt; with your favourite editor and add the following line &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;auth required pam_google_authenticator.so
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Make sure to save the changes.&lt;/p&gt;
+&lt;p&gt;b) Then open &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; with your favourite file editor (again) and search for &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ChallengeResponseAuthentication no
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;replace the &lt;code&gt;no&lt;/code&gt; with a &lt;code&gt;yes&lt;/code&gt; and save the changes.&lt;/p&gt;
+&lt;h3&gt;3) Setup the google-authenticator&lt;/h3&gt;
+&lt;p&gt;Still on the account to set-up, enter the command on the terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;google-authenticator
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will enable you setup the google-authenticator through a series of yes (y) and no (n) questions. 
+Make sure you select &lt;code&gt;time-based&lt;/code&gt; for   better security service, and save updates in the default file... 
+You can follow along the other questions (they are easy peasy and depends with your preferences).&lt;/p&gt;
+&lt;p&gt;NB: after chosing &lt;code&gt;Y&lt;/code&gt; in the first option (authentication tokens to be time-based), a new secret key, 
+verification code and an emergency scratch codes are generated with barcode also. &lt;/p&gt;
+&lt;p&gt;After setting up the options to your preference(s), restart the ssh-server:
+&lt;code&gt;service ssh restart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Make sure on your system, the time is correctly set with the same time zone on your phone. I don't want to overemphasis on this, but you     need ntpd runninig on your system. &lt;/p&gt;
+&lt;p&gt;On Ubuntu &lt;code&gt;apt-get install ntp&lt;/code&gt; while on CentOS &lt;code&gt;yum -y install ntp&lt;/code&gt; then start &lt;code&gt;ntpd&lt;/code&gt; and enable it on System boot.&lt;/p&gt;
+&lt;h3&gt;4) Linking the APP on our    phone...&lt;/h3&gt;
+&lt;p&gt;Open the google-authenticator app on your phone and select the &lt;em&gt;add on account&lt;/em&gt; option, then tap on the &lt;em&gt;Enter key provided&lt;/em&gt; and enter your secret key.&lt;/p&gt;
+&lt;p&gt;NB: You can choose &lt;em&gt;scan a barcode&lt;/em&gt; and scan the generated barcode but that didn't work for me.&lt;/p&gt;
+&lt;h3&gt;5) Now test the set up....&lt;/h3&gt;
+&lt;p&gt;Try login from a diffrent computer... You should get a verification prompt before the password/login-in for guys using ssh-keys.
+&lt;em&gt;Done!!&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Tue, 19 Aug 2014 09:00:00 +0300</pubDate><guid>tag:prewired.pw,2014-08-19:2014/08/SSH-with-2FA.html</guid><category>repost</category><category>Linux</category></item><item><title>Disk benchmark with bonnie in Linux</title><link>http://prewired.pw/2014/06/disk-benchmark.html</link><description>&lt;p&gt;&lt;em&gt;bonnie++&lt;/em&gt; is a different tool compared to other disk testing tools, which are probably included in other performance monitoring tools like &lt;code&gt;vmstat&lt;/code&gt; just to mention the most common one on any Linux install.&lt;/p&gt;
+&lt;p&gt;It runs a performance test of the filesystem I/O and uses C library calls hence simulating non exaggerated results. It writes 8KB blocks to estimate maximum sustained rate of transfer. To make results interesting and reliable, it cycles through rewriting and rereading to provide BEST simulation of filesystem usage.&lt;/p&gt;
+&lt;p&gt;After installing bonnie, all the details of the tests performed by Bonnie++ are contained in the file. &lt;code&gt;/usr/share/doc/bonnie++/readme.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For more details on usage, use &lt;code&gt;man bonnie++&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NB: Despite the fact his tool is to aid in detecting bottlenecks with the Disks, it can cause a serious I/O contention while running. So don't run it on a production system that is live.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Below is an output from my Desktop with a T4300 dual processor (2100 MHz, Bus speed 800 MHz; GNU/Linux 3.13.0-27-generic Kernel, x86_64).&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Writing a byte at a &lt;span class="nb"&gt;time&lt;/span&gt;…done
+Writing intelligently…done
+Rewriting…done
+Reading a byte at a &lt;span class="nb"&gt;time&lt;/span&gt;…done
+Reading intelligently…done
+start ‘em…done…done…done…done…done…
+Create files in sequential order…done.
+Stat files in sequential order…done.
+Delete files in sequential order…done.
+Create files in random order…done.
+Stat files in random order…done.
+Delete files in random order…done.
+Version 1.97 ——Sequential Output—— –Sequential Input- –Random-
+Concurrency &lt;span class="m"&gt;1&lt;/span&gt; -Per Chr- –Block– -Rewrite- -Per Chr- –Block– –Seeks–
+Machine Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP /sec %CP
+warlord 4G &lt;span class="m"&gt;232&lt;/span&gt; &lt;span class="m"&gt;97&lt;/span&gt; &lt;span class="m"&gt;47643&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;14893&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;819&lt;/span&gt; &lt;span class="m"&gt;99&lt;/span&gt; &lt;span class="m"&gt;35599&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt; 89.7 2
+Latency 70015us 1807ms 1637ms 33484us 235ms 667ms
+Version 1.97 ——Sequential Create—— ——–Random Create——–
+warlord -Create– –Read— -Delete– -Create– –Read— -Delete–
+files /sec %CP /sec %CP /sec %CP /sec %CP /sec %CP /sec %CP
+&lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;9025&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; +++++ +++ &lt;span class="m"&gt;26989&lt;/span&gt; &lt;span class="m"&gt;51&lt;/span&gt; &lt;span class="m"&gt;23112&lt;/span&gt; &lt;span class="m"&gt;52&lt;/span&gt; +++++ +++ &lt;span class="m"&gt;26063&lt;/span&gt; 52
+Latency 84074us 966us 1410us 118us 2034us 2684us
+1.97,1.97,warlord,1,1402393673,4G,,232,97,47643,12,14893,4,819,99,35599,4,89.7,2,16,,,,,
+
+9025,21,+++++,+++,26989,51,23112,52,+++++,+++,26063,52,70015us,1807ms,1637ms,
+
+33484us,235ms,667ms,84074us,966us,1410us,118us,2034us,2684us
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John Troon</dc:creator><pubDate>Tue, 24 Jun 2014 08:00:00 +0300</pubDate><guid>tag:prewired.pw,2014-06-24:2014/06/disk-benchmark.html</guid><category>repost</category><category>Linux</category></item></channel></rss>
