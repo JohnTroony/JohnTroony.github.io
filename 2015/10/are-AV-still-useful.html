@@ -74,7 +74,7 @@
         </li>
     </ul>
     <div class="post-content">
-      <p>Antivirus (AV) softwares by design are supposed to protect the users from Malware infections; AVs act as a preventive countermeasure to Malware infection. The Av vendors are always tirelessly trying to analyze new Malware samples and update their products with latest Malware signatures.</p>
+      <p>Antivirus (AV) softwares by design are supposed to protect the users from Malware infections; they act as a preventive countermeasure for Malware infection. The Av vendors are always tirelessly trying to analyze new Malware samples and update their products with latest Malware signatures.</p>
 <h3>Protection is King but detection is Kong..</h3>
 <p>AV software uses various techniques to identify any malicious program, the level of self-protection in these malicious softwares goes down to how skilled the VXer is and their goal...</p>
 <p>Basically, an AV product to determine if a program/software is malicious, it will do the following:</p>
@@ -122,13 +122,23 @@
 <p>Please note that these results from the tests doesn't satisfy that the AVs having 100% detection rates are the best security products for your network, as a matter of fact security is a service not a product. Today they might be able to detect 100% attackers, tomorrow maybe 50%. And another thing, if you read such reports to help you make decision on what AV to deploy on your network hosts, be reminded this is a limited test (all AV vendors use) to come up with the detection rates on the identified threats. What if the unidentified attackers are more than the identified? </p>
 <p><img alt="AV-Test Results, 2015" src="/images/av-test.png" title="AV test on detection rate on Windows and Linux" /></p>
 <h2>Conclusion</h2>
-<p>AV vendors have to find a way to stay relevant and useful in combating Malwares otherwise they will soon be phased out by more advance prevention and detection systems. As the commonly used checksum/hash functions for building up some signatures are being cryptographically flawed (e.g. MD5 and SHA1 collisions) the process of coming up with the AV Signatures is wanting.</p>
+<p>AV vendors have to find a way to stay relevant and useful in combating Malwares otherwise they will soon be phased out by more advance prevention and detection systems. As the commonly used checksum &amp; hash functions for building up some signatures are being cryptographically flawed (e.g. MD5<sup>2</sup> and SHA1<sup>3</sup> collisions) the process of coming up with the AV Signatures is wanting.</p>
 <p>Before investing on an AV for your hosts in a network, do a deep threat modeling to identify your potential treats and build up a defensive mechanism for your network mainly based on your threat model for best results on a reasonable budget.</p>
 <p>As much as network log analysis and captured network traffic analysis are important especially in incident response, invest in setting up a real-time network traffic analysis and defense, even if you have an AV deployed. Be proactive and focus on preventing-detecting-neutralizing threats. </p>
 <h4>Reference:</h4>
 <ul>
-<li><sup>1</sup> - <a href="http://thenextweb.com/insider/2015/08/14/kaspersky-antivirus-accused-of-creating-malware-for-over-10-years/">Kaspersky AV Accused of Creating Malware for over 10 years</a></li>
-<li><a href="https://securelist.com/analysis/36063/the-contemporary-antivirus-industry-and-its-problems/">The contemporary AV industry and its problems</a></li>
+<li>
+<p><sup>1</sup> - <a href="http://thenextweb.com/insider/2015/08/14/kaspersky-antivirus-accused-of-creating-malware-for-over-10-years/">Kaspersky AV Accused of Creating Malware for over 10 years</a></p>
+</li>
+<li>
+<p><sup>2</sup> -<a href="http://www.mathstat.dal.ca/~selinger/md5collision/">MD5 Collision Demo</a></p>
+</li>
+<li>
+<p><sup>3</sup> -<a href="https://sites.google.com/site/itstheshappening/">The SHAppening: freestart collisions for SHA-1</a></p>
+</li>
+<li>
+<p><a href="https://securelist.com/analysis/36063/the-contemporary-antivirus-industry-and-its-problems/">The contemporary AV industry and its problems</a></p>
+</li>
 </ul>
     </div>
   </div>
