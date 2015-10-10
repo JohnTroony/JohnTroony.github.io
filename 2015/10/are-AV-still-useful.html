@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="../../2015/10/are-AV-still-useful.html" />
+
+    <title>  Prewired &mdash; Do we still need AntiVirus protection?
+</title>
+
+      <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+      <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+
+      <link type="application/atom+xml" rel="alternate" href="/feed/atom.xml"  title="Prewired Atom Feed">
+
+    <link rel="stylesheet" href="../../theme/css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="author" content="John Troon">
+    <meta name="description" content="Is the role of AV in information security still active?">
+  <meta name="tags" contents="AV, Antivirus, infosec, opinion, ">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+      <div class="header-image pull-left">
+        <a class="nodec" href="../.."><img src=/images/profile.png></a>
+      </div>
+    <div class="header-inner">
+      <h1 class="header-name">
+        <a class="nodec" href="../..">Prewired</a>
+      </h1>
+      <h3 class="header-text">Random Thoughts Aligned..</h3>
+      <ul class="header-menu list-inline">
+          <li><a class="nodec icon-github" href="https://github.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-twitter" href="https://twitter.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-rss" href="/feed/atom.xml"></a></li>
+      </ul>
+    </div>
+  </div>
+</header> <!-- /.header -->  <div class="container">
+  <div class="post full-post">
+    <h1 class="post-title">
+      <a href="/2015/10/are-AV-still-useful.html" title="Permalink to Do we still need AntiVirus protection?">Do we still need AntiVirus protection?</a>
+    </h1>
+    <ul class="list-inline">
+      <li class="post-date">
+        <a class="text-muted" href="/2015/10/are-AV-still-useful.html" title="2015-10-10T11:41:00+03:00">Sat 10 October 2015</a>
+      </li>
+      <li class="muted">&middot;</li>
+      <li class="post-category">
+        <a href="../../category/infosec.html">infosec</a>
+      </li>
+        <li class="muted">&middot;</li>
+        <li>
+            <a href="/tag/AV.html">AV</a>,             <a href="/tag/Antivirus.html">Antivirus</a>,             <a href="/tag/infosec.html">infosec</a>,             <a href="/tag/opinion.html">opinion</a>        </li>
+        <li class="muted">&middot;</li>
+        <li>
+          <address class="post-author">
+            By <a href="../../author/john-troon.html">John Troon</a>
+          </address>
+        </li>
+    </ul>
+    <div class="post-content">
+      <p>Antivirus (AV) softwares by design are supposed to protect the users from Malware infections; AVs act as a preventive countermeasure to Malware infection. The Av vendors are always tirelessly trying to analyze new Malware samples and update their products with latest Malware signatures.</p>
+<h3>Protection is King but detection is Kong..</h3>
+<p>AV software uses various techniques to identify any malicious program, the level of self-protection in these malicious softwares goes down to how skilled the VXer is and their goal...</p>
+<p>Basically, an AV product to determine if a program/software is malicious, it will do the following:</p>
+<ul>
+<li>
+<p>A static scan using a set of signatures and types of packers used, if any.</p>
+</li>
+<li>
+<p>Sandbox and Heuristics - runtime analysis on some sort of OS emulation to determine what the program will do upon execution.</p>
+</li>
+</ul>
+<p>Bypassing all of the above AV detection process is easy, using crypters, custom payload encoders and packers, determining if the executable is running in an AV OS emulator or a real OS before executing the payload, setting timers for payload execution, killing the AV itself and so many other ways... e.g. check the <code>gamer.exe</code> I created to evade AV detection using simple <code>custom tricks</code> and a <code>Metasploit payload</code> :P </p>
+<p><img alt="Sample Binary I crafted to evade AV" src="/images/vt.png" title="Virust Total result" />
+<a href="https://www.virustotal.com/en/file/B7059AB990802D181E02CD25B667F25A43FF541E17EDC8C9F330F3F9CC81DC2A/analysis]">virustotal.com/en/file/B7059AB990802D181E02CD25B667F25A43FF541E17EDC8C9F330F3F9CC81DC2A/analysis</a></p>
+<p><img alt="Sample Binary I crafted to evade AV" src="/images/metascan.png" title="MetaScan - OPSWAT results" />
+<a href="https://www.metascan-online.com/#!/results/file/9195e677c01f45d68defced6a34dad0c/regular">metascan-online.com/#!/results/file/9195e677c01f45d68defced6a34dad0c/regular</a></p>
+<p>Some sophisticated VXers use advance obscure techniques to avoid AV detection like taking advantage of some undocumented OS functionality or a 0day. No matter how good you think your AV vendor is trying to protect you, if their detection rate of these new rising Malware patterns is not high, you are living on false hope.</p>
+<p>A good AV product, should be proactive, able to detect new Malware variants and neutralize such threats... So, are AV vendors able to protect users from these rapid evolution of Malwares?</p>
+<h3>The AV Industry : Money, Money, Money...</h3>
+<p>The motivation behind the AV industry is money and the same motivation is driving VXers too. Users on the other hand feel safe when they see fancy AV GUIs and million of progress bars that make them feel protected.</p>
+<p>Attackers and VXers are using new attack vectors that the AV industry have to keep up with, the creators of these Malwares are always ahead of the game. AV vendors have set up their own labs to collect and analyze all sorts of different emerging Malware variants, and from other speculations (I've no proof if it's true or false) it has been said some of these AV vendors create Malwares they can only neutralize, for commercial gains <sup>1</sup> .</p>
+<p>Investing only on an AV product for protection and detection of potential attacks either in an enterprise network or personal computer is a bad idea. There are other considerations that you have to factor in your defensive model.</p>
+<h3>Kill AVs or Not?</h3>
+<p>We can't rule out the fact that AVs still play a role in protecting our systems, but the way we utilize and make use of these products is what matters. An important focus is on the attack vector, for instance a Malwares can download a Base64 encoded payload and execute it, another can use DNS query to get the same encoded payload, another can kill the AV process etc</p>
+<p>Active Network monitoring and packet analysis is one of the very best ways to combine with AV features. Deploying an Intrusion Detection System (NIDS, HIDS), strict Firewall rules and ensuring all services that are not needed on the System are shutdown and also making sure the System gets all critical/non-critical updates, is close to a win. The other key thing is user-awareness, especially in an enterprise setting, train users not to click any link they see on their emails and websites. </p>
+<h3>Can We now get a Linux AV?</h3>
+<p>There is a common misconception that Linux is Malware-free, well, VXers are mainly motivated by money! The reason why Windows has a higher percentage of Malware hits it's not just about the Microsoft Windows OS but the market share it has, especially on personal computers. </p>
+<p>Linux on the other hand has a larger market share on Server Systems and it's also getting a grip on the personal computers as well. There is a rise of Linux Malwares over the past decade and it's highly advisable to get a Linux AV if you are using Linux in an heterogeneous network.</p>
+<p>The Linux Servers (or PCs) can be used to serve Malwares to the Windows/Mac clients if not well scanned and monitored, these is especially in an enterprise network. other compromised Linux machines can be used for DDOS, hosting Malwares, spam mail-server etc... Read about the recent
+<a href="http://blog.malwaremustdie.org/2014/09/mmd-0028-2014-fuzzy-reversing-new-china.html">Linux XOR Malware</a>...</p>
+<h3>So what's the best AV?</h3>
+<p>To call an AV "the best", there are a lot of factors to consider and you have to compare with the other existing AV products. From my personal point of view, A good AV should be good in:</p>
+<ul>
+<li>Identifying malicious behavior in programs</li>
+<li>Identifying malicious behavior in documents and web-pages</li>
+<li>Identifying malicious patterns in network packets</li>
+<li>Adapting and identifying new malicious patters based on previous found patterns</li>
+<li>Self protection (so Malwares can't kill it)</li>
+<li>Scanning compressed and packed files</li>
+<li>Providing some Firewall features (block malicious traffic even if the IDS/FW allowed).</li>
+</ul>
+<p>Having an AV that can do all the above without bias is pretty hard and will definitely be expensive, tailored for the enterprise networks.
+<a href="http://www.av-test.org">AV-Test</a> (an independent IT-Security Institute) did a nice research on trying to analyze the common AV vendors products and their detection rate on some 900 actually "already known" attackers for Linux and 12,000 attackers for Windows.</p>
+<p>Only <code>Kaspersky Endpoint Version</code> achieved 100-percent detection under Linux and Only the security package from <code>Symantec</code> achieved 100% detection under Windows (compared to their counterparts). </p>
+<p>Please note that these results from the tests doesn't satisfy that the AVs having 100% detection rates are the best security products for your network, as a matter of fact security is a service not a product. Today they might be able to detect 100% attackers, tomorrow maybe 50%. And another thing, if you read such reports to help you make decision on what AV to deploy on your network hosts, be reminded this is a limited test (all AV vendors use) to come up with the detection rates on the identified threats. What if the unidentified attackers are more than the identified? </p>
+<p><img alt="AV-Test Results, 2015" src="/images/av-test.png" title="AV test on detection rate on Windows and Linux" /></p>
+<h2>Conclusion</h2>
+<p>AV vendors have to find a way to stay relevant and useful in combating Malwares otherwise they will soon be phased out by more advance prevention and detection systems. As the commonly used checksum/hash functions for building up some signatures are being cryptographically flawed (e.g. MD5 and SHA1 collisions) the process of coming up with the AV Signatures is wanting.</p>
+<p>Before investing on an AV for your hosts in a network, do a deep threat modeling to identify your potential treats and build up a defensive mechanism for your network mainly based on your threat model for best results on a reasonable budget.</p>
+<p>As much as network log analysis and captured network traffic analysis are important especially in incident response, invest in setting up a real-time network traffic analysis and defense, even if you have an AV deployed. Be proactive and focus on preventing-detecting-neutralizing threats. </p>
+<h4>Reference:</h4>
+<ul>
+<li><sup>1</sup> - <a href="http://thenextweb.com/insider/2015/08/14/kaspersky-antivirus-accused-of-creating-malware-for-over-10-years/">Kaspersky AV Accused of Creating Malware for over 10 years</a></li>
+<li><a href="https://securelist.com/analysis/36063/the-contemporary-antivirus-industry-and-its-problems/">The contemporary AV industry and its problems</a></li>
+</ul>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="col-md-8 col-md-offset-2">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'Prewired';
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript=Prewired">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+    <a href="https://disqus.com" class="dsq-brlink">
+      blog comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+  </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+    </p>
+    <div class="text-center">
+      Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
+    </div>
+  </div>
+</footer> <!-- /.footer -->
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+</body> <!-- 42 -->
+
+</html>
