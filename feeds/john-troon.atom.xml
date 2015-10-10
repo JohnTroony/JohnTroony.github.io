@@ -45,9 +45,9 @@ the load averages start to rise over 1, know there is always a process ready and
 &lt;p&gt;Obviously, when the load averages rise above 1 there is something in the system being delayed. If it's a mission critical system, running some serious stuff in a production environment, getting an additional CPU can solve the problem and ensure that there is a better chance of “schedulable” time.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;These data can be monitored through:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;uptime
-top
-vmstat
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;uptime
+&lt;span class="nv"&gt;$ &lt;/span&gt;top
+&lt;span class="nv"&gt;$ &lt;/span&gt;vmstat
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -66,15 +66,15 @@ vmstat
 &lt;p&gt;Install Dropbox, head over to &lt;a href="https://www.dropbox.com/install?os=lnx"&gt;Dropbox's site&lt;/a&gt; and get Dropbox. I'm currently using Ubuntu 14 (Yes, Ubuntu!).. or do a Dropbox headless Install via command line&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;32-bit:
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tar xzf -
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tar xzf -
 
 64-bit:
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86_64&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tar xzf -
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; wget -O - &lt;span class="s2"&gt;&amp;quot;https://www.dropbox.com/download?plat=lnx.x86_64&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tar xzf -
 
 Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
-~/.dropbox-dist/dropboxd
+&lt;span class="nv"&gt;$ &lt;/span&gt;~/.dropbox-dist/dropboxd
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -84,34 +84,33 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 &lt;h3&gt;Step Three:&lt;/h3&gt;
 &lt;p&gt;Download &lt;a href="https://github.com/JohnTroony/LUKS-OPs/releases"&gt;Luks-Ops&lt;/a&gt;, a script that I've written to automate the basic LUKS operation on Linux.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# 1. Clone the repo&lt;/span&gt;
-git clone https://github.com/JohnTroony/LUKS-OPs.git
-&lt;span class="nb"&gt;cd &lt;/span&gt;LUKS-OPs
+&lt;span class="nv"&gt;$ &lt;/span&gt;git clone https://github.com/JohnTroony/LUKS-OPs.git
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;LUKS-OPs
 
 &lt;span class="c"&gt;# 2. Change to super user&lt;/span&gt;
-sudo su 
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo su 
 
 &lt;span class="c"&gt;# 3. Copy the script to /bin  as luksOps&lt;/span&gt;
-cp luks-ops.sh /bin/luksOps 
+&lt;span class="nv"&gt;$ &lt;/span&gt;cp luks-ops.sh /bin/luksOps 
 
 &lt;span class="c"&gt;# 4. Move into the Dropbox folder to create the LUKS container&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; /home/user/Dropbox 
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /home/user/Dropbox 
 
 &lt;span class="c"&gt;# 5. Create a LUKS container but don&amp;#39;t mount it, DISKNAME is the label, 1000 is size in MB&lt;/span&gt;
-luksOps new DISKNAME 1000
+&lt;span class="nv"&gt;$ &lt;/span&gt;luksOps new DISKNAME 1000
 
 &lt;span class="c"&gt;# 6. Move the created LUKS container (DISKNAME) to /home/user/Dropbox&lt;/span&gt;
-mv /usr/DISKNAME .
+&lt;span class="nv"&gt;$ &lt;/span&gt;mv /usr/DISKNAME .
 
 &lt;span class="c"&gt;# 7. Mount the LUKS container. This will ask for the pass phrase.&lt;/span&gt;
-luksOps mount DISKNAME
+&lt;span class="nv"&gt;$ &lt;/span&gt;luksOps mount DISKNAME
 
 &lt;span class="c"&gt;# 8. Add files to the Mounted LUKS container then use the following command to exit&lt;/span&gt;
-luksOps unmount-all
+&lt;span class="nv"&gt;$ &lt;/span&gt;luksOps unmount-all
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;That is all, once you have the LUKS container in the &lt;code&gt;~/Dropbox&lt;/code&gt; folder, you can always mount it, add files (You wouldn't want to be adding and removing large multimedia files to the container though.
-), unmount it and let Dropbox sync the changes!&lt;/p&gt;
+&lt;p&gt;That is all, once you have the LUKS container in the &lt;code&gt;$ ~/Dropbox&lt;/code&gt; folder, you can always mount it, add files (You wouldn't want to be adding and removing large multimedia files to the container though.), unmount it and let Dropbox sync the changes!&lt;/p&gt;
 &lt;p&gt;N.B: check luksOps menu for more options like to unmount a single volume instead of all.&lt;/p&gt;
 &lt;p&gt;Done!&lt;/p&gt;
 &lt;h3&gt;I've to checkout:&lt;/h3&gt;
@@ -146,13 +145,13 @@ Fingerprint=CC89 97A6 1F78 304A 7D91  C27F 7B85 A886 AD3A 484C
 &lt;p&gt;Signature of the gpg-transition.txt using the new key 0x7b85a886ad3a484c&lt;/p&gt;
 &lt;h2&gt;Updating&lt;/h2&gt;
 &lt;p&gt;To fetch the full new key from a public key server using GnuPG, run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;    gpg --keyserver keys.gnupg.net --recv-key 0x7B85A886AD3A484C
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="nv"&gt;$ &lt;/span&gt;gpg --keyserver keys.gnupg.net --recv-key 0x7B85A886AD3A484C
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;If you have already validated my old key, you can then validate that the
 new key is signed by my old key:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;    gpg --check-sigs 0x7B85A886AD3A484C
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="nv"&gt;$ &lt;/span&gt;gpg --check-sigs 0x7B85A886AD3A484C
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -301,7 +300,42 @@ perl -e &lt;span class="s1"&gt;&amp;#39;for my $x (1..200) { print &amp;quot;for
 &lt;span class="k"&gt;fi&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="nv"&gt;$blue&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;NB: This script checks for common identified vulns only.. Please check online for more updated details&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$normal&lt;/span&gt;
 &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$EXITCODE&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="repost"></category><category term="Linux"></category><category term="security"></category></entry><entry><title>The "SCTP" protocol</title><link href="http://prewired.pw/2014/09/SCTP-protocol.html" rel="alternate"></link><updated>2014-09-07T12:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2014-09-07:2014/09/SCTP-protocol.html</id><summary type="html">&lt;p&gt;TCP and UDP protocols have been in around for approximately 20+ years now. Even though they have helped in building nice Internet applications since inception, things are changing in the techie world and they will always change. TCP being a connection state protocol while UDP a connectionless state protocol, there have been attempts to build a general purpose protocol above the IP layer, SCTP so far is the only one endorsed by the IETF.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="repost"></category><category term="Linux"></category><category term="security"></category></entry><entry><title>Exploring anti-DOS tools for Apache httpd</title><link href="http://prewired.pw/2014/09/exploring-anti-DOS-tools-for-Apache-httpd.html" rel="alternate"></link><updated>2014-09-13T18:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2014-09-13:2014/09/exploring-anti-DOS-tools-for-Apache-httpd.html</id><summary type="html">&lt;p&gt;Slowloris is among the well known "Denial Of Service" (or DOS) &lt;a href="http://resources.infosecinstitute.com/dos-attacks-free-dos-attacking-tools/"&gt;tool&lt;/a&gt; used by both experienced attackers and script kiddies. This evening, I've been testing &lt;em&gt;mod_evasion&lt;/em&gt; and &lt;em&gt;mod_antiloris&lt;/em&gt; on Apache httpd /2.2.15 (Oracle Linux 6.5 using Redhat built Kernel).&lt;/p&gt;
+&lt;h2&gt;First Setup:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Server: 192.168.43.221 (running Apache httpd with &lt;em&gt;mod_evasion&lt;/em&gt; loaded)&lt;/li&gt;
+&lt;li&gt;Attacking Machine: 192.168.43.39 (Slowloris "DOSing" the server)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Apache httpd error logs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Error from bad requests" src="/images/badheader.png" title="Apache error logs" /&gt;&lt;/p&gt;
+&lt;p&gt;The loaded module (&lt;em&gt;mod_evasion&lt;/em&gt;), can't save Apache httpd from the DOS attack, even loading the site from a browser is somehow impossible.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Apache DOSed" src="/images/apachedown.png" title="Can't access via Browser" /&gt;&lt;/p&gt;
+&lt;p&gt;But this module can prevent a brute-force attack (&lt;em&gt;e.g. an automated script to guess a password field in a web-form&lt;/em&gt;) in a web server (running Apache httpd).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mod_evasion can prevent Brute-force.." src="/images/bruteforce.png" title="mod_evasion can prevent Brute-force attack" /&gt;&lt;/p&gt;
+&lt;p&gt;Just to make an interesting comparison, I replaced Apache httpd with Nginx on the same Server (192.168.43.221) and &lt;strong&gt;ta! da!..&lt;/strong&gt;
+&lt;img alt="Nginx is not DOSed by Slowloris" src="/images/nginxup.png" title="Nginx is not DOSed by Slowloris" /&gt; Nginx gracefully made it by ignoring the request from  Slowloris. But I noticed a brute-force attack is possible while using Nginx default settings! &lt;strong&gt;Nginx access logs&lt;/strong&gt;
+&lt;img alt="Nginx Brute-forced" src="/images/bfnginx.png" title="Nginx can be Brute-forced" /&gt;&lt;/p&gt;
+&lt;h2&gt;Second Setup:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Server: 192.168.43.221 (running Apache httpd with mod_antiloris loaded)&lt;/li&gt;
+&lt;li&gt;Attacking Machine: 192.168.43.39 (Sowloris "DOSing" the server)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;mod_antiloris&lt;/em&gt; played it nice by monitoring the requests coming from the client and rejected extra connections. Accessing the web services from the browser was not interfered.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mod_antiloris logs" src="/images/antiloris.png" title="mod_antiloris logs" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;mod_evasion&lt;/em&gt; is cool but can't save Apache httpd from Slowloris. On the other hand, &lt;em&gt;mod_antiloris&lt;/em&gt; worked fine and denied Slowloris a chance to mess up with the Apache httpd server.&lt;/p&gt;
+&lt;h2&gt;Explanation:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Putting the Lens on the Logs...&lt;/strong&gt; (Apache httpd access log)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Apache-httpd access log" src="/images/accesslog.png" title="Apache httpd access logs" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why did mod_antiloris pass the test and mod_evasion fail?..&lt;/em&gt; &lt;em&gt;Why did Slowloris work on Apache httpd and not on Nginx?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Apache httpd waits for a &lt;strong&gt;complete HTTP request header&lt;/strong&gt; to be received, this makes it good to serve web-content even in slow connections. So, by default, the timeout value is 300 seconds and it's reset each time the client sends more packets. Slowloris takes advantage by sending incomplete HTTP request headers and maintains the connection by sending more incomplete request headers resetting the time-out counter.&lt;/p&gt;
+&lt;p&gt;Slowloris is written in Perl, it simply plays around with &lt;strong&gt;CR (Carriage Return)&lt;/strong&gt; and &lt;strong&gt;LF (Line Feed)&lt;/strong&gt; at the end of every incomplete HTTP request header. A blank line after the request header is used to represent the completion of the header in HTTP. Since the request is incomplete and the timeout is 300 seconds, Apache httpd will keep the connection alive waiting for the remaining data, while Slowloris keeps on sending the incomplete HTTP requests resetting the timeout counter.&lt;/p&gt;
+&lt;p&gt;As a result, all available connections will be sucked up by Slowloris and cause a Denial of Service. mod_antiloris helped Apache httpd beat Slowloris but you can also use IPtables by setting a connection limit or putting Apache httpd behind Varnish. Another solution I've not tested is using a Hardware Load Balancer that only accepts full HTTP connections.&lt;/p&gt;
+&lt;p&gt;Nginx uses a much more event-driven (asynchronous) architecture that can be scaled, instead of the "Maximum Connections" as in Apache httpd. So, in a nutshell, Nginx ignores the requests from Slowloris and processes other "full" connections.&lt;/p&gt;
+&lt;p&gt;This is not to claim that Nginx is bullet proof by default, tools like &lt;a href="https://github.com/valyala/goloris"&gt;golris&lt;/a&gt; can mess with your Nginx server (when running with default settings), though you can always protect this from happening by using Nginx "Http limit connection" module / IPtables / deny POST requests or patch Nginx, so it drops connection if the client sends POST body at a very slow rate.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But I'll always go with Nginx whenever possible!&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;I think Apache httpd should find a way of prioritizing clients sending full HTTP requests to minimize DOS attacks of the (above) described nature...&lt;/p&gt;
+&lt;p&gt;Ciao! &lt;/p&gt;</summary><category term="linux"></category><category term="security"></category><category term="httpd"></category><category term="nginx"></category></entry><entry><title>The "SCTP" protocol</title><link href="http://prewired.pw/2014/09/SCTP-protocol.html" rel="alternate"></link><updated>2014-09-07T12:28:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2014-09-07:2014/09/SCTP-protocol.html</id><summary type="html">&lt;p&gt;TCP and UDP protocols have been in around for approximately 20+ years now. Even though they have helped in building nice Internet applications since inception, things are changing in the techie world and they will always change. TCP being a connection state protocol while UDP a connectionless state protocol, there have been attempts to build a general purpose protocol above the IP layer, SCTP so far is the only one endorsed by the IETF.&lt;/p&gt;
 &lt;p&gt;SCTP combines concepts from TCP and UDP for even better control over the transport of packets (with additional API calls for SCTP). TCP applications can be ported to SCTP.&lt;/p&gt;
 &lt;h3&gt;Some cool Features:&lt;/h3&gt;
 &lt;ol&gt;
@@ -348,20 +382,20 @@ TCP is a byte-oriented protocol, and UDP is message-oriented. The majority of ap
 &lt;p&gt;Now, decide which account you want to setup the 2FA for, I mean, if you use a normal account, you'll not be able to login as root. (I love root :D ). If you love root like me, login as root and follow along. I've my "google authenticator" app installed on my crappy Samsung phone running Android 4.2.2 and I'm setting up 2FA on Ubuntu 14.x&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;1) Install required applications&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install libpam-google-authenticator
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;apt-get install libpam-google-authenticator
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;On CentOS you will need to install &lt;code&gt;libpam-google-authenticator&lt;/code&gt; from the source file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;yum -y groupinstall &lt;span class="s2"&gt;&amp;quot;Development Tools&amp;quot;&lt;/span&gt;
-yum install pam-devel
-yum -y install ntp
-wget https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2
-bunzip2 libpam-google-authenticator-1.0-source.tar.bz2
-tar -xvf libpam-google-authenticator-1.0-source.tar
-&lt;span class="nb"&gt;cd &lt;/span&gt;libpam-google-authenticator-1.0/
-make
-make install
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;yum -y groupinstall &lt;span class="s2"&gt;&amp;quot;Development Tools&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;yum install pam-devel
+&lt;span class="nv"&gt;$ &lt;/span&gt;yum -y install ntp
+&lt;span class="nv"&gt;$ &lt;/span&gt;wget https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2
+&lt;span class="nv"&gt;$ &lt;/span&gt;bunzip2 libpam-google-authenticator-1.0-source.tar.bz2
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar -xvf libpam-google-authenticator-1.0-source.tar
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;libpam-google-authenticator-1.0/
+&lt;span class="nv"&gt;$ &lt;/span&gt;make
+&lt;span class="nv"&gt;$ &lt;/span&gt;make install
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -380,7 +414,7 @@ make install
 &lt;p&gt;replace the &lt;code&gt;no&lt;/code&gt; with a &lt;code&gt;yes&lt;/code&gt; and save the changes.&lt;/p&gt;
 &lt;h3&gt;3) Setup the google-authenticator&lt;/h3&gt;
 &lt;p&gt;Still on the account to set-up, enter the command on the terminal:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;google-authenticator
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;google-authenticator
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -390,9 +424,9 @@ You can follow along the other questions (they are easy peasy and depends with y
 &lt;p&gt;NB: after chosing &lt;code&gt;Y&lt;/code&gt; in the first option (authentication tokens to be time-based), a new secret key, 
 verification code and an emergency scratch codes are generated with barcode also. &lt;/p&gt;
 &lt;p&gt;After setting up the options to your preference(s), restart the ssh-server:
-&lt;code&gt;service ssh restart&lt;/code&gt;&lt;/p&gt;
+&lt;code&gt;$ service ssh restart&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Make sure on your system, the time is correctly set with the same time zone on your phone. I don't want to overemphasis on this, but you     need ntpd runninig on your system. &lt;/p&gt;
-&lt;p&gt;On Ubuntu &lt;code&gt;apt-get install ntp&lt;/code&gt; while on CentOS &lt;code&gt;yum -y install ntp&lt;/code&gt; then start &lt;code&gt;ntpd&lt;/code&gt; and enable it on System boot.&lt;/p&gt;
+&lt;p&gt;On Ubuntu &lt;code&gt;$ apt-get install ntp&lt;/code&gt; while on CentOS &lt;code&gt;$ yum -y install ntp&lt;/code&gt; then start &lt;code&gt;$ ntpd&lt;/code&gt; and enable it on System boot.&lt;/p&gt;
 &lt;h3&gt;4) Linking the APP on our    phone...&lt;/h3&gt;
 &lt;p&gt;Open the google-authenticator app on your phone and select the &lt;em&gt;add on account&lt;/em&gt; option, then tap on the &lt;em&gt;Enter key provided&lt;/em&gt; and enter your secret key.&lt;/p&gt;
 &lt;p&gt;NB: You can choose &lt;em&gt;scan a barcode&lt;/em&gt; and scan the generated barcode but that didn't work for me.&lt;/p&gt;
