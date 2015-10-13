@@ -74,10 +74,10 @@
         </li>
     </ul>
     <div class="post-content">
-      <p>Antivirus (AV) softwares by design are supposed to protect the users from Malware infections; they act as a preventive countermeasure for Malware infection. The Av vendors are always tirelessly trying to analyze new Malware samples and update their products with latest Malware signatures.</p>
+      <p>Antivirus (AV) softwares by design are supposed to protect the users from Malware infections; they act as a preventive countermeasure for Malware infections. The AV vendors are always tirelessly trying to analyze new Malware samples and update their products with latest Malware signatures.</p>
 <h3>Protection is King but detection is Kong..</h3>
-<p>AV software uses various techniques to identify any malicious program, the level of self-protection in these malicious softwares goes down to how skilled the VXer is and their goal...</p>
-<p>Basically, an AV product to determine if a program/software is malicious, it will do the following:</p>
+<p>AV software uses various techniques to identify any malicious program/file, the level of self-protection in these malicious programs goes down to how skilled the VXer is and their goal...</p>
+<p>Basically, for an AV product to determine if a program/file is malicious, it will do the following:</p>
 <ul>
 <li>
 <p>A static scan using a set of signatures and types of packers used, if any.</p>
@@ -86,7 +86,7 @@
 <p>Sandbox and Heuristics - runtime analysis on some sort of OS emulation to determine what the program will do upon execution.</p>
 </li>
 </ul>
-<p>Bypassing all of the above AV detection process is easy, using crypters, custom payload encoders and packers, determining if the executable is running in an AV OS emulator or a real OS before executing the payload, setting timers for payload execution, killing the AV itself and so many other ways... e.g. check the <code>gamer.exe</code> I created to evade AV detection using simple <code>custom tricks</code> and a <code>Metasploit payload</code> :P </p>
+<p>Bypassing all of the above AV detection process is easy, using crypters, custom payload encoders and packers; determining if the executable is running in an AV OS emulator or a real OS before executing the payload, setting timers for payload execution, killing the AV itself and so many other ways... e.g. check the <code>gamer.exe</code> I created to evade AV detection using simple <code>custom tricks</code> and a <code>Metasploit payload</code> :P </p>
 <p><img alt="Sample Binary I crafted to evade AV" src="/images/vt.png" title="Virust Total result" />
 <a href="https://www.virustotal.com/en/file/B7059AB990802D181E02CD25B667F25A43FF541E17EDC8C9F330F3F9CC81DC2A/analysis]">virustotal.com/en/file/B7059AB990802D181E02CD25B667F25A43FF541E17EDC8C9F330F3F9CC81DC2A/analysis</a></p>
 <p><img alt="Sample Binary I crafted to evade AV" src="/images/metascan.png" title="MetaScan - OPSWAT results" />
@@ -94,19 +94,19 @@
 <p>Some sophisticated VXers use advance obscure techniques to avoid AV detection like taking advantage of some undocumented OS functionality or a 0day. No matter how good you think your AV vendor is trying to protect you, if their detection rate of these new rising Malware patterns is not high, you are living on false hope.</p>
 <p>A good AV product, should be proactive, able to detect new Malware variants and neutralize such threats... So, are AV vendors able to protect users from these rapid evolution of Malwares?</p>
 <h3>The AV Industry : Money, Money, Money...</h3>
-<p>The motivation behind the AV industry is money and the same motivation is driving VXers too. Users on the other hand feel safe when they see fancy AV GUIs and million of progress bars that make them feel protected.</p>
+<p>The motivation behind the AV industry is money and the same motivation is driving VXers too. Users on the other hand feel safe when they see fancy AV GUIs and lots of animated progress bars that have nothing to do with Malware detection....</p>
 <p>Attackers and VXers are using new attack vectors that the AV industry have to keep up with, the creators of these Malwares are always ahead of the game. AV vendors have set up their own labs to collect and analyze all sorts of different emerging Malware variants, and from other speculations (I've no proof if it's true or false) it has been said some of these AV vendors create Malwares they can only neutralize, for commercial gains <sup>1</sup> .</p>
 <p>Investing only on an AV product for protection and detection of potential attacks either in an enterprise network or personal computer is a bad idea. There are other considerations that you have to factor in your defensive model.</p>
 <h3>Kill AVs or Not?</h3>
-<p>We can't rule out the fact that AVs still play a role in protecting our systems, but the way we utilize and make use of these products is what matters. An important focus is on the attack vector, for instance a Malwares can download a Base64 encoded payload and execute it, another can use DNS query to get the same encoded payload, another can kill the AV process etc</p>
-<p>Active Network monitoring and packet analysis is one of the very best ways to combine with AV features. Deploying an Intrusion Detection System (NIDS, HIDS), strict Firewall rules and ensuring all services that are not needed on the System are shutdown and also making sure the System gets all critical/non-critical updates, is close to a win. The other key thing is user-awareness, especially in an enterprise setting, train users not to click any link they see on their emails and websites. </p>
+<p>We can't rule out the fact that AVs still play a role in protecting our systems, but the way we utilize and make use of these products is what matters. An important focus is on the attack vector, for instance a Malware can download a Base64 encoded payload and execute it, another can use DNS query to get the same encoded payload, another can kill the AV process etc</p>
+<p>Active Network monitoring and packet analysis are some of the very best ways to combine with AV features. Deploying an Intrusion Detection System (NIDS, HIDS), strict Firewall rules and ensuring all services that are not needed on the System are shutdown and also making sure the System gets all critical/non-critical updates etc. The other key thing is user-awareness, especially in an enterprise setting, train users not to click any link they see on their emails and websites. </p>
 <h3>Can We now get a Linux AV?</h3>
 <p>There is a common misconception that Linux is Malware-free, well, VXers are mainly motivated by money! The reason why Windows has a higher percentage of Malware hits it's not just about the Microsoft Windows OS but the market share it has, especially on personal computers. </p>
 <p>Linux on the other hand has a larger market share on Server Systems and it's also getting a grip on the personal computers as well. There is a rise of Linux Malwares over the past decade and it's highly advisable to get a Linux AV if you are using Linux in an heterogeneous network.</p>
 <p>The Linux Servers (or PCs) can be used to serve Malwares to the Windows/Mac clients if not well scanned and monitored, these is especially in an enterprise network. other compromised Linux machines can be used for DDOS, hosting Malwares, spam mail-server etc... Read about the recent
 <a href="http://blog.malwaremustdie.org/2014/09/mmd-0028-2014-fuzzy-reversing-new-china.html">Linux XOR Malware</a>...</p>
 <h3>So what's the best AV?</h3>
-<p>To call an AV "the best", there are a lot of factors to consider and you have to compare with the other existing AV products. From my personal point of view, A good AV should be good in:</p>
+<p>To call an AV "the best", there are a lot of factors to consider and you have to compare with the other existing AV products. From my personal point of view, a good AV should be good in:</p>
 <ul>
 <li>Identifying malicious behavior in programs</li>
 <li>Identifying malicious behavior in documents and web-pages</li>
@@ -117,14 +117,14 @@
 <li>Providing some Firewall features (block malicious traffic even if the IDS/FW allowed).</li>
 </ul>
 <p>Having an AV that can do all the above without bias is pretty hard and will definitely be expensive, tailored for the enterprise networks.
-<a href="http://www.av-test.org">AV-Test</a> (an independent IT-Security Institute) did a nice research on trying to analyze the common AV vendors products and their detection rate on some 900 actually "already known" attackers for Linux and 12,000 attackers for Windows.</p>
-<p>Only <code>Kaspersky Endpoint Version</code> achieved 100-percent detection under Linux and Only the security package from <code>Symantec</code> achieved 100% detection under Windows (compared to their counterparts). </p>
+<a href="http://www.av-test.org">AV-Test</a> is an independent IT-Security Institute, recently they did a research on trying to analyze the common AV vendors products and their detection rate on some 900 actually "already known" attackers for Linux and 12,000 attackers for Windows.</p>
+<p>Only <code>Kaspersky Endpoint Version</code> achieved 100-percent detection under Linux and only the security package from <code>Symantec</code> achieved 100% detection under Windows (compared to their counterparts). </p>
 <p>Please note that these results from the tests doesn't satisfy that the AVs having 100% detection rates are the best security products for your network, as a matter of fact security is a service not a product. Today they might be able to detect 100% attackers, tomorrow maybe 50%. And another thing, if you read such reports to help you make decision on what AV to deploy on your network hosts, be reminded this is a limited test (all AV vendors use) to come up with the detection rates on the identified threats. What if the unidentified attackers are more than the identified? </p>
 <p><img alt="AV-Test Results, 2015" src="/images/av-test.png" title="AV test on detection rate on Windows and Linux" /></p>
 <h2>Conclusion</h2>
 <p>AV vendors have to find a way to stay relevant and useful in combating Malwares otherwise they will soon be phased out by more advance prevention and detection systems. As the commonly used checksum &amp; hash functions for building up some signatures are being cryptographically flawed (e.g. MD5<sup>2</sup> and SHA1<sup>3</sup> collisions) the process of coming up with the AV Signatures is wanting.</p>
 <p>Before investing on an AV for your hosts in a network, do a deep threat modeling to identify your potential treats and build up a defensive mechanism for your network mainly based on your threat model for best results on a reasonable budget.</p>
-<p>As much as network log analysis and captured network traffic analysis are important especially in incident response, invest in setting up a real-time network traffic analysis and defense, even if you have an AV deployed. Be proactive and focus on preventing-detecting-neutralizing threats. </p>
+<p>As much as network log analysis and captured network traffic analysis are important especially in an incident response, invest in setting up a real-time network traffic analysis and defense, even if you have an AV deployed. Be proactive and focus on preventing-detecting-neutralizing threats. </p>
 <h4>Reference:</h4>
 <ul>
 <li>
