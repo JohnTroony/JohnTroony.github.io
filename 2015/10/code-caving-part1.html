@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="../../2015/10/code-caving-part1.html" />
+
+    <title>  Prewired &mdash; Code Caving in a PE file : Part one
+</title>
+
+      <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+      <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+
+      <link type="application/atom+xml" rel="alternate" href="/feed/atom.xml"  title="Prewired Atom Feed">
+
+    <link rel="stylesheet" href="../../theme/css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="author" content="John Troon">
+    <meta name="description" content="Code Caving: Part one (Adding code to an existing section)">
+  <meta name="tags" contents="Reverse Engineering, AV evasion, infosec, ">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+      <div class="header-image pull-left">
+        <a class="nodec" href="../.."><img src=/images/profile.png></a>
+      </div>
+    <div class="header-inner">
+      <h1 class="header-name">
+        <a class="nodec" href="../..">Prewired</a>
+      </h1>
+      <h3 class="header-text">Random Thoughts Aligned..</h3>
+      <ul class="header-menu list-inline">
+          <li><a class="nodec icon-github" href="https://github.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-twitter" href="https://twitter.com/JohnTroony"></a></li>
+          <li><a class="nodec icon-rss" href="/feed/atom.xml"></a></li>
+      </ul>
+    </div>
+  </div>
+</header> <!-- /.header -->  <div class="container">
+  <div class="post full-post">
+    <h1 class="post-title">
+      <a href="/2015/10/code-caving-part1.html" title="Permalink to Code Caving in a PE file : Part one">Code Caving in a PE file : Part one</a>
+    </h1>
+    <ul class="list-inline">
+      <li class="post-date">
+        <a class="text-muted" href="/2015/10/code-caving-part1.html" title="2015-10-20T15:20:00+03:00">Tue 20 October 2015</a>
+      </li>
+      <li class="muted">&middot;</li>
+      <li class="post-category">
+        <a href="../../category/infosec.html">infosec</a>
+      </li>
+        <li class="muted">&middot;</li>
+        <li>
+            <a href="/tag/Reverse Engineering.html">Reverse Engineering</a>,             <a href="/tag/AV evasion.html">AV evasion</a>,             <a href="/tag/infosec.html">infosec</a>        </li>
+        <li class="muted">&middot;</li>
+        <li>
+          <address class="post-author">
+            By <a href="../../author/john-troon.html">John Troon</a>
+          </address>
+        </li>
+    </ul>
+    <div class="post-content">
+      <h3>Adding Code to an existing Section</h3>
+<p>This is going to be a quick dirty code caving guide for anyone interested, although I don't plan to cover the basic details like digging up the Win32 API and the PE file format. Well, I'll make references to existing guides you can use to get familiarized with any concept or tool I think is important. You don't really need to be an assembly expert to get started but if you already understand the PE file format and the commonly used Win32 APIs you are on a roll.</p>
+<p>I intended to make three separate guides on code caving, Part one : Adding to an existing section, Part two: enlarging an existing section and lastly Part three : adding a section on a PE file.... Later on I'd possibly do a post on Elf file formats as well. This is the first part and it's easy.</p>
+<p>Follow, this is a "Do With Me" guide and it is straight to the point avoiding the nitty-gritty stories.... On this post, I've made use of the following tools and setup:</p>
+<ul>
+<li>WINE on Arch-Linux </li>
+<li>OllyDbg Ver 1.10  (Debbuger)</li>
+<li>LordPE Deluxe (PE file editor)</li>
+<li>Gnome-calculator (programming mode)</li>
+<li>Virtual-box running Windows XP SP3 (to test the modified files)</li>
+<li>WxHexEditor (Hex editor)</li>
+<li>Notes (scrap book)</li>
+</ul>
+<p>You can follow along with your own setup (Windows/Linux) as long as you have the main tools for this specific blog post, OllyDbg, LordPE and any Hex-editor. For steps that are OS specific, I'll point out.</p>
+<p>Reverse Engineering some Programs/Softwares might be against the law or provoke someone (<a href="http://seclists.org/isn/2015/Aug/4">try Oracle</a>), please make sure you have the proper rights to use the file you choose. In this case, I'll be using HeidiSql for no good reason other than it's a valid Windows executable file. You can get the same file I'm using and some of the tools on my <a href="https://github.com/JohnTroony/PE-CodeCaving">Git Repo</a> or the links at the end of this page.</p>
+<h3>Step one : Locate the cave...</h3>
+<p>Load the executable file on <code>LordPE</code> and View the available Sections..</p>
+<p>A) Click on <code>PE Editor</code> and select the file to load. It must be a valid PE file.
+<img alt="Click on PE Editor and choose a file to load" src="/images/step1.png" title="Click on PE Editor and choose a file to load" /></p>
+<p>B) Once Loaded, note down the <code>EntryPoint</code>, this is the address where execution will start to flow when you run the executable you've loaded on LordPE. Also note the <code>imageBase</code> which represents the preferred starting address (virtual address) of the executable when it is loaded into memory.
+<img alt="A new window will show" src="/images/step2.png" title="A new window appears." />
+<img alt="Note ImageBase and EntryPoint" src="/images/notes.png" title="Note EntryPoint and ImageBase" /></p>
+<p>C) Now to view Sections available on the loaded file, click <code>Sections</code>. A section table should appear.
+<img alt="Click on sections " src="/images/step3.png" title="Click on Sections" /></p>
+<p>The sections that are most commonly present in an executable are:</p>
+<ul>
+<li>Executable Code Section, named .text (Microsoft) or CODE (Borland)</li>
+<li>Data Sections, named .data, .rdata, or .bss (Microsoft) or DATA (Borland)</li>
+<li>Resources Section, named .rsrc</li>
+<li>Export Data Section, named .edata</li>
+<li>Import Data Section, named .idata</li>
+<li>Debug Inion Section, named .debug</li>
+</ul>
+<p>The names are actually irrelevant as they are ignored by the OS and are present only for the convenience of the programmer. PE file on disk is the same on the Memory. However it is not copied exactly into memory, The windows loader decides which parts need mapping in memory and
+omits any others. Data that is not mapped in is placed at the end of the file past any parts that will be mapped in e.g. Debug inion.</p>
+<p>Also the location of an item in the file on disk will often differ from its location once loaded into memory because of the page-based virtual memory management that windows uses. When the sections are loaded into RAM they are aligned to fit to 4Kb memory pages, each section starting on a new page. Virtual memory is explained below.</p>
+<p>The default page size for Windows is 4096 bytes (1000h) and it would be wasteful to align executables to a 4Kb page boundary on disk as that would make them significantly bigger than necessary. Because of this, the PE header has two different alignment fields; Section alignment and file alignment. Section alignment is how sections are aligned in memory as above. File alignment (usually 512 bytes or 200h) is how sections are aligned in the file on disk and is a multiple of disk sector size in order to optimize the loading process.</p>
+<p>Since we want to add executable code on the file, we are interested with the <code>Executable Section</code>, which in our case is <code>CODE</code>. Comparing the <code>VSize</code> (Virtual-size) to <code>Rsize</code> ( Raw-size), we realize the Section <code>CODE</code> is a little bit large on disk compared to when it's mapped in memory.
+<img alt="Section CODE " src="/images/step3-highlighted.png" title="Executable Section, CODE" /></p>
+<p>This means the section <code>CODE</code> is padded with 00 at the end while on disk. This is where we are interested to add our code..... In other words, we have found a cave we can use.</p>
+<p>D) Before we get too excited, let's confirm if this is a valid cave, note that section <code>DATA</code> starts at offset <code>A200</code>, this should be immediately after the end of section <code>CODE</code> (Check value of <code>ROffset</code> at Section <code>DATA</code> on the Section Table)</p>
+<p><img alt="Load Hex editor " src="/images/step4.png" title="Go to offset A200 on Hex-editor" /></p>
+<p>Alright, we have a trail of <code>00</code> padded at the end of section CODE.
+<img alt="Our Cave " src="/images/step4b.png" title="Notice the padded 00 at the end of section CODE" /></p>
+<p>Just before Section <code>DATA</code> starts (at offset A200) we can confirm there is series of <code>00</code> padded at the end of section <code>CODE</code>.. Choose the offset to add code from the found cave, I'll be adding code at <code>A140</code>. Now you can sip whatever you are drinking and continue...</p>
+<h3>Step Two : Adding Code on our found Cave</h3>
+<p>Using Gnome-calculator in programming mode, we can calculate the size of the cave. The range of offset is from <code>A130</code> to <code>A1FF</code> and the difference is <code>CF</code> (<code>A1FF−A130 = CF</code>). This means our code can't be more than 207 bytes (0xCF).
+<img alt="Cave Size " src="/images/cavesize.png" title="Size of the Cave" /></p>
+<p>A few things you need to know as from the section table:</p>
+<ul>
+<li>EntryPoint = 0000A5F8</li>
+<li>ImageBase = 00400000</li>
+<li>ROffset of where I'm adding my extra code = 0000A140</li>
+<li>Virtual offset of section <code>CODE</code> (VOffset) = 00001000</li>
+<li>Raw offset of section <code>CODE</code> (ROffset) = 00000400</li>
+</ul>
+<p><img alt="CODE section " src="/images/code.png" title="CODE section" /></p>
+<p>We know the <code>EntryPoint</code> (represents the relative virtual address at which the loader will begin execution) and the <code>ImageBase</code> (represents the preferred starting address of the executable when it is loaded into memory). </p>
+<p>Relative Virtual Address (RVA): The offset in memory relative to the ImageBase. We need to calculate the <code>RVA</code> of where I intend to add my extra code using OllyDbg. </p>
+<p>Formula for getting RVA :</p>
+<ul>
+<li><code>RVA = ROffset of where I'm adding my code - ROffset of the section CODE + VOffset of section CODE + ImageBase</code></li>
+<li>RVA = 0000A140 - 00000400 + 00001000 + 00400000</li>
+<li>RVA = 40AD40</li>
+</ul>
+<p><img alt="Calculate RVA " src="/images/rva.png" title="Calculate RVA" /></p>
+<p>Now open OllyDbg and go to the section where we want to add the code (Press Ctrl + G and enter 40AD40), hit space-bar to add the extra Assembly code line by line while clicking assemble. In my case, since I'm using a Windows SP3, I'll add a <a href="http://shell-storm.org/shellcode/files/shellcode-739.php">shellcode from shell-storm</a> that starts the calculator application. </p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">shellcode</span><span class="p">[]</span> <span class="o">=</span>         
+        <span class="s">&quot;</span><span class="se">\x31\xC9</span><span class="s">&quot;</span>                <span class="c1">// xor ecx,ecx        </span>
+        <span class="s">&quot;</span><span class="se">\x51</span><span class="s">&quot;</span>                    <span class="c1">// push ecx        </span>
+        <span class="s">&quot;</span><span class="se">\x68\x63\x61\x6C\x63</span><span class="s">&quot;</span>    <span class="c1">// push 0x636c6163        </span>
+        <span class="s">&quot;</span><span class="se">\x54</span><span class="s">&quot;</span>                    <span class="c1">// push dword ptr esp        </span>
+        <span class="s">&quot;</span><span class="se">\xB8\xC7\x93\xC2\x77</span><span class="s">&quot;</span>    <span class="c1">// mov eax,0x77c293c7        </span>
+        <span class="s">&quot;</span><span class="se">\xFF\xD0</span><span class="s">&quot;</span><span class="p">;</span>               <span class="c1">// call eax         </span>
+
+    <span class="p">((</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)())</span><span class="n">shellcode</span><span class="p">)();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>I modified the shellcode a bit to jump back to the original EntryPoint after starting the calculator. So what I'll enter on OllyDbg is a little bit different.</p>
+<div class="highlight"><pre><span class="nf">xor</span> <span class="no">ecx</span><span class="p">,</span><span class="no">ecx</span>        
+<span class="no">push</span> <span class="no">ecx</span>        
+<span class="no">push</span> <span class="mi">0x636c6163</span>        
+<span class="no">push</span> <span class="no">esp</span>        
+<span class="no">mov</span> <span class="no">eax</span><span class="p">,</span><span class="mi">0x77c293c7</span>        
+<span class="no">call</span> <span class="no">eax</span> 
+<span class="no">xor</span> <span class="no">eax</span><span class="p">,</span><span class="no">eax</span>
+<span class="nf">mov</span> <span class="no">eax</span><span class="p">,</span><span class="mi">0040</span><span class="no">A5F8</span>
+<span class="nf">jmp</span> <span class="no">eax</span>
+</pre></div>
+
+
+<p>Press Ctrl + G and enter 40AD40 (go to our RVA so we can add the additional code)
+<img alt="go to RVA" src="/images/goto.png" title="go-to RVA" /></p>
+<p>Hit Space-bar and add the first line of the assembly code and click on Assemble.
+<img alt="Add code" src="/images/addasma.png" title="Add code" /></p>
+<p>Keep on adding the code till you finish the list line and then close the adding window.
+<img alt="Add code" src="/images/addasmb.png" title="Add code" /></p>
+<p>Right-click, select "Copy to executable" and choose "All modifications"
+<img alt="Add code" src="/images/addasm3.png" title="Add code" /></p>
+<p>CLick on "Copy all" on the new window that pops out.
+<img alt="Add code" src="/images/addasm4.png" title="Add code" /></p>
+<p>Another window will pop out, close it and you should see a similar window as the one below, accept by clicking "yes" and save the changes with a new filename. Close OllyDbg, we are done with it.</p>
+<p><img alt="Add code" src="/images/addasm5.png" title="Add code" /></p>
+<p>We are almost done, we will change the EntryPoint to the address that has our new code and return back to the original EntryPoint i.e 0000A5F8. after execution of the added code. On LordPE change EntryPoint to 0000AD40 i.e. <code>0040AD40 - ImageBase(00400000)</code> and click on save.</p>
+<p><img alt="New EntryPoint" src="/images/newEPx.png" title="New EntryPoint" /></p>
+<p>If we compare our code cave segment on our Hex-editor before and after addition of the assembly code, you should be able to see a difference.</p>
+<p>BEFORE
+<img alt="HexEditor before asm added" src="/images/CMP1.png" title="HexEditor before asm added" /></p>
+<p>AFTER
+<img alt="HexEditor after asm added" src="/images/CMP2.png" title="HexEditor after asm added" /></p>
+<p>Awesome, now lets test the modified binary on a running XP SP3. We expect it to start calculator and when closed the application should continue with the normal execution (in this case it's an installer).</p>
+<p><img alt="Run on Windows" src="/images/run1.png" title="Application when on XP SP3" /></p>
+<p><img alt="Run on Windows" src="/images/run2.png" title="Application when on XP SP3" /></p>
+<p>We are done! I'll create some time and do part-two using a different Executable. Think of all the cool things you can incorporate... Don't be limited to this guide, do more reading and think outside the box :P </p>
+<p>For example, you can generate a shellcode using Metasploit and use it instead of the 16 bytes Calc.exe shellcode and instead of hijacking the EntryPoint, you can hijack any jmp instruction to your shellcode and return to the original jmp address etc</p>
+<p>References:</p>
+<ul>
+<li><a href="https://github.com/JohnTroony/PE-CodeCaving/raw/master/Tools%20%26%20Files/Bin_Portable_Executable.pdf">Portable Executable File  Compendium v11 by Goppit</a></li>
+<li><a href="https://code.google.com/p/corkami/wiki/PE">the Portable Executable  on Windows by corkami</a></li>
+<li><a href="http://www.codeproject.com/Articles/20240/The-Beginners-Guide-to-Codecaves">The Beginners Guide to Codecaves</a></li>
+<li><a href="https://zeros.googlecode.com/files/pecoff_v8.pdf">pecoff v8 (PDF)</a></li>
+<li><a href="http://bit.ly/WP9vgm">Welcome to theForger's Win32 API Tutorial (zip file)</a></li>
+<li><a href="http://mh-nexus.de/en/hxd">HxD - Freeware Hex Editor and Disk Editor</a></li>
+<li>For Tools and other files I've used, check my <a href="https://github.com/JohnTroony/PE-CodeCaving">Git repositoryy</a></li>
+</ul>
+    </div>
+  </div>
+  <hr class="separator">
+  <div class="col-md-8 col-md-offset-2">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'Prewired';
+      (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript=Prewired">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+    <a href="https://disqus.com" class="dsq-brlink">
+      blog comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+  </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+    </p>
+    <div class="text-center">
+      Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
+    </div>
+  </div>
+</footer> <!-- /.footer -->
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+</body> <!-- 42 -->
+
+</html>

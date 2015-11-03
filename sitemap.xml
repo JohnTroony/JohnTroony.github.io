@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://prewired.pw/</loc>
-<lastmod>2015-10-13T06:30:28-00:00</lastmod>
+<lastmod>2015-11-03T21:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/archives.html</loc>
-<lastmod>2015-10-13T06:30:28-00:00</lastmod>
+<lastmod>2015-11-03T21:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/tags.html</loc>
-<lastmod>2015-10-13T06:30:28-00:00</lastmod>
+<lastmod>2015-11-03T21:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.pw/categories.html</loc>
-<lastmod>2015-10-13T06:30:28-00:00</lastmod>
+<lastmod>2015-11-03T21:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.pw/2015/10/code-caving-part1.html</loc>
+<lastmod>2015-10-20T15:20:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -124,7 +131,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://prewired.pw/category/infosec.html</loc>
-<lastmod>2015-10-10T11:41:00+02:27</lastmod>
+<lastmod>2015-10-20T15:20:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -151,6 +158,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://prewired.pw/tag/linux.html</loc>
+<lastmod>2015-04-27T14:15:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://prewired.pw/tag/httpd.html</loc>
 <lastmod>2014-09-13T18:28:00+02:27</lastmod>
 <changefreq>daily</changefreq>
@@ -165,6 +179,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://prewired.pw/tag/av-evasion.html</loc>
+<lastmod>2015-10-20T15:20:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://prewired.pw/tag/random.html</loc>
 <lastmod>2015-07-27T09:28:00+02:27</lastmod>
 <changefreq>daily</changefreq>
@@ -173,7 +194,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://prewired.pw/tag/infosec.html</loc>
-<lastmod>2015-10-10T11:41:00+02:27</lastmod>
+<lastmod>2015-10-20T15:20:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -200,8 +221,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://prewired.pw/tag/linux.html</loc>
-<lastmod>2015-04-27T14:15:00+02:27</lastmod>
+<loc>http://prewired.pw/tag/repost.html</loc>
+<lastmod>2014-11-16T09:28:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -221,13 +242,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://prewired.pw/tag/repost.html</loc>
-<lastmod>2014-11-16T09:28:00+02:27</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://prewired.pw/tag/luks.html</loc>
 <lastmod>2015-02-25T12:28:00+02:27</lastmod>
 <changefreq>daily</changefreq>
@@ -235,8 +249,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://prewired.pw/tag/reverse-engineering.html</loc>
+<lastmod>2015-10-20T15:20:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://prewired.pw/author/john-troon.html</loc>
-<lastmod>2015-10-10T11:41:00+02:27</lastmod>
+<lastmod>2015-10-20T15:20:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
