@@ -111,7 +111,7 @@
 omits any others. Data that is not mapped in is placed at the end of the file past any parts that will be mapped in e.g. Debug inion.</p>
 <p>Also the location of an item in the file on disk will often differ from its location once loaded into memory because of the page-based virtual memory management that windows uses. When the sections are loaded into RAM they are aligned to fit to 4Kb memory pages, each section starting on a new page. Virtual memory is explained below.</p>
 <p>The default page size for Windows is 4096 bytes (1000h) and it would be wasteful to align executables to a 4Kb page boundary on disk as that would make them significantly bigger than necessary. Because of this, the PE header has two different alignment fields; Section alignment and file alignment. Section alignment is how sections are aligned in memory as above. File alignment (usually 512 bytes or 200h) is how sections are aligned in the file on disk and is a multiple of disk sector size in order to optimize the loading process.</p>
-<p>Since we want to add executable code on the file, we are interested with the <code>Executable Section</code>, which in our case is <code>CODE</code>. Comparing the <code>VSize</code> (Virtual-size) to <code>Rsize</code> ( Raw-size), we realize the Section <code>CODE</code> is a little bit large on disk compared to when it's mapped in memory.
+<p>Since we want to add executable code on the file, we are interested with the <code>Executable Section</code>, which in our case is the<code>CODE</code>. Comparing the <code>VSize</code> (Virtual-size) to <code>Rsize</code> ( Raw-size), we realize the Section <code>CODE</code> is a little bit large on disk compared to when it's mapped in memory.
 <img alt="Section CODE " src="/images/step3-highlighted.png" title="Executable Section, CODE" /></p>
 <p>This means the section <code>CODE</code> is padded with 00 at the end while on disk. This is where we are interested to add our code..... In other words, we have found a cave we can use.</p>
 <p>D) Before we get too excited, let's confirm if this is a valid cave, note that section <code>DATA</code> starts at offset <code>A200</code>, this should be immediately after the end of section <code>CODE</code> (Check value of <code>ROffset</code> at Section <code>DATA</code> on the Section Table)</p>
@@ -183,7 +183,7 @@ omits any others. Data that is not mapped in is placed at the end of the file pa
 <img alt="Add code" src="/images/addasm4.png" title="Add code" /></p>
 <p>Another window will pop out, close it and you should see a similar window as the one below, accept by clicking "yes" and save the changes with a new filename. Close OllyDbg, we are done with it.</p>
 <p><img alt="Add code" src="/images/addasm5.png" title="Add code" /></p>
-<p>We are almost done, we will change the EntryPoint to the address that has our new code and return back to the original EntryPoint i.e 0000A5F8. after execution of the added code. On LordPE change EntryPoint to 0000AD40 i.e. <code>0040AD40 - ImageBase(00400000)</code> and click on save.</p>
+<p>We are almost done, we will change the EntryPoint to the address that has our new code and return back to the original EntryPoint i.e 0000A5F8 after execution of the added code. On LordPE change EntryPoint to 0000AD40 i.e. <code>0040AD40 - ImageBase (00400000)</code> and click on save.</p>
 <p><img alt="New EntryPoint" src="/images/newEPx.png" title="New EntryPoint" /></p>
 <p>If we compare our code cave segment on our Hex-editor before and after addition of the assembly code, you should be able to see a difference.</p>
 <p>BEFORE
@@ -193,7 +193,7 @@ omits any others. Data that is not mapped in is placed at the end of the file pa
 <p>Awesome, now lets test the modified binary on a running XP SP3. We expect it to start calculator and when closed the application should continue with the normal execution (in this case it's an installer).</p>
 <p><img alt="Run on Windows" src="/images/run1.png" title="Application when on XP SP3" /></p>
 <p><img alt="Run on Windows" src="/images/run2.png" title="Application when on XP SP3" /></p>
-<p>We are done! I'll create some time and do part-two using a different Executable. Think of all the cool things you can incorporate... Don't be limited to this guide, do more reading and think outside the box :P </p>
+<p>We are done! I'll create some time and do part-two using a different executable. Think of all the cool things you can incorporate... Don't be limited to this guide, do more reading and think outside the box :P </p>
 <p>For example, you can generate a shellcode using Metasploit and use it instead of the 16 bytes Calc.exe shellcode and instead of hijacking the EntryPoint, you can hijack any jmp instruction to your shellcode and return to the original jmp address etc</p>
 <p>References:</p>
 <ul>
@@ -202,6 +202,7 @@ omits any others. Data that is not mapped in is placed at the end of the file pa
 <li><a href="http://www.codeproject.com/Articles/20240/The-Beginners-Guide-to-Codecaves">The Beginners Guide to Codecaves</a></li>
 <li><a href="https://zeros.googlecode.com/files/pecoff_v8.pdf">pecoff v8 (PDF)</a></li>
 <li><a href="http://bit.ly/WP9vgm">Welcome to theForger's Win32 API Tutorial (zip file)</a></li>
+<li>[The BackDoor Factory](https://github.com/secretsquirrel/the-backdoor-factoryo)</li>
 <li><a href="http://mh-nexus.de/en/hxd">HxD - Freeware Hex Editor and Disk Editor</a></li>
 <li>For Tools and other files I've used, check my <a href="https://github.com/JohnTroony/PE-CodeCaving">Git repositoryy</a></li>
 </ul>
