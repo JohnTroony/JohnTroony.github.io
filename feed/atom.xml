@@ -1,5 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feed/atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2015-11-23T11:41:00+03:00</updated><entry><title>Demons or Invisibility Cloaks?</title><link href="http://prewired.pw/2015/11/Invisibility-Uniform.html" rel="alternate"></link><updated>2015-11-23T11:41:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-11-23:2015/11/Invisibility-Uniform.html</id><summary type="html">&lt;p&gt;Taking down terrorists, securing the borders of a country, being proactive and neutralizing potential threats before they spawn as attacks.... That is the line of thinking when we talk about DoD and any Army... Being one step ahead of the enemy has always been the rule of thumb. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Prewired</title><link href="http://prewired.pw/" rel="alternate"></link><link href="http://prewired.pw/feed/atom.xml" rel="self"></link><id>http://prewired.pw/</id><updated>2016-02-25T15:20:00+03:00</updated><entry><title>Visually Exploring Data with Plotly</title><link href="http://prewired.pw/2016/02/Data-visualization.html" rel="alternate"></link><updated>2016-02-25T15:20:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2016-02-25:2016/02/Data-visualization.html</id><summary type="html">&lt;h2&gt;Necessity, the mother of exploration.&lt;/h2&gt;
+&lt;p&gt;With the emerging cultural landscape of big data and conversational buzz around big data analytics, I fell in love with data. There are patterns in almost every activity we do, from our eating habits, shopping, Internet usage to how we talk. When we capture these data in the correct format, we can analyze and present the patterns in a simple beautiful way.&lt;/p&gt;
+&lt;p&gt;Whenever we analyze data, our main goal is to show its features in order of their importance, reveal patterns, and features that exist across multiple dimensions. I've been learning different python data analysis tools and frameworks despite the fact that I'm not a trained data-scientist. My experience while learning how to use some of these tools (matplotlib, pandas, NumPy, SciPy, IPython, NLTK &amp;amp; SQLAlchemy) forced me to explore other ways to represent the information from the analyzed data. &lt;/p&gt;
+&lt;p&gt;When it comes to visually representing analyzed data, I personally love &lt;code&gt;plotly&lt;/code&gt; even after exploring other libs like &lt;code&gt;D3js&lt;/code&gt;. Matplotlib is capable of doing more than good, but when you want to stream the results on a website or display analysis on a dashboard, you'll need an extra effort. Plotly is the answer, there is support for Python, R, MATLAB, JavaScript, Ruby, GO, F#, hardware &amp;amp; embedded systems like Arduino, Julia and an online Streaming API etc&lt;/p&gt;
+&lt;h2&gt;Where is thy data?&lt;/h2&gt;
+&lt;p&gt;So after replacing Gnome with XFCE on my Arch Linux, I realized each time my Laptop starts, I had to &lt;code&gt;kill -9&lt;/code&gt; some file tracking applications that degraded the performance on the Laptop because it was trying to index everything on my full hard-disk.&lt;/p&gt;
+&lt;p&gt;Over a period of time, I could see a lot of &lt;code&gt;kill&lt;/code&gt; commands on my history along with the PIDs (Process IDs). Below is a snap of how the Tracker App is mapped in my Laptop:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;troon: ~/Desktop/Tracker»  ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep tracker 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="Tracker/Miner App in Arch with XFCE" src="/images/tracker.png" /&gt;&lt;/p&gt;
+&lt;p&gt;I cleaned this data and saved it on a CSV file. Let us visualize which PIDs are commonly used after several reboots. Here is a snip of the raw data (history id, kill -9 command and the Tracker PID). I was interested on the saved Tracker IDs only.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;troon: ~/Desktop/Tracker» &lt;span class="nb"&gt;history&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;&amp;#39;kill -9&amp;#39;&lt;/span&gt; &amp;gt; trackerPIDs.txt
+troon:~/Desktop/Tracker» head trackerPIDs.txt
+   &lt;span class="m"&gt;66&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 17323
+  &lt;span class="m"&gt;181&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 3410
+  &lt;span class="m"&gt;182&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 3346
+  &lt;span class="m"&gt;183&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 3330
+  &lt;span class="m"&gt;292&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 9100
+ &lt;span class="m"&gt;1125&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 24279
+ &lt;span class="m"&gt;1128&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 25098
+ &lt;span class="m"&gt;1604&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 593
+ &lt;span class="m"&gt;1635&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 603
+ &lt;span class="m"&gt;1636&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 606
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After cleaning the data on &lt;code&gt;trackerPIDS.txt&lt;/code&gt; and saving it on a different file in CSV format, &lt;code&gt;cleanedTracks.csv&lt;/code&gt;. Each row on the final file contains five PIDs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-user-guides&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-apps&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-store&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-fs&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-extract&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The CSV file with the cleaned data finally looks something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;troon:~/Desktop/Tracker» head cleanedTracks.csv
+627,628,629,608,610
+613,620,623,791,793
+605,608,617,618,604
+715,603,607,614,615
+616,605,609,610,618
+621,590,594,598,605
+608,602,604,612,616
+627,630,640,643,644
+775,777,784,785,786
+692,694,702,703,704
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you'd wish to check on the data used and all other files related to this post, &lt;a href="https://github.com/JohnTroony/Plotly-DataVis"&gt;fork it!&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Using &lt;a href="https://plot.ly/api/"&gt;Plotly&lt;/a&gt; to visualize the data.&lt;/h3&gt;
+&lt;p&gt;Using plotly to visualize data is easy as deciding what to eat when you are broke. First, I had to install plotly (for Python) &lt;code&gt;pip install plotly&lt;/code&gt;. Below is a script I wrote to open the CSV file, fill empty lists with data from the file and feed them to plotly.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly.offline&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;plotly.graph_objs&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;go&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;
+
+&lt;span class="c"&gt;# Open the CSV file with data&lt;/span&gt;
+&lt;span class="n"&gt;readdata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;cleanedTracks.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="c"&gt;# Create empty lists for the data&lt;/span&gt;
+&lt;span class="n"&gt;miner_user_guides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;miner_apps&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;store&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;miner_fs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;extract&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="c"&gt;# For every line in the CSV file, append respective list&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;readdata&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;miner_user_guides&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;miner_apps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;store&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;miner_fs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c"&gt;############# Scatter Plot : Tracker Application PIDs against Reboots&lt;/span&gt;
+
+&lt;span class="c"&gt;# map our data (in lists) to a Scatter plot&lt;/span&gt;
+&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_user_guides&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_appsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_apps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;storePlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;store&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_fsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_fs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;extractPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# data to be plotted&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_appsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;storePlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_fsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extractPlot&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c"&gt;# Combine data and plot &lt;/span&gt;
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;tracker-scatter.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;############# Histogram Plot : Tracker Application PIDS against their Frequencies&lt;/span&gt;
+
+&lt;span class="c"&gt;# map our data (in lists) to a Histogram plot&lt;/span&gt;
+&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_user_guides&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_appsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_apps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;storePlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;store&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_fsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_fs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;extractPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# data to be plotted&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_appsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;storePlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_fsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extractPlot&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c"&gt;# Combine data and plot &lt;/span&gt;
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;tracker-histogram.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;When this script is executed, two files are generated (and opened on your default browser): &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://plot.ly/~JohnTroony/1/scatter-plot-tracker-apps-pids-against-reboots/"&gt;tracker-scatter.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://plot.ly/~JohnTroony/3/tracker-apps-pids-against-frequency/"&gt;tracker-histogram.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Scatter Plot&lt;/h4&gt;
+&lt;iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~JohnTroony/1.embed"&gt;&lt;/iframe&gt;
+
+&lt;h4&gt;Histogram Plot&lt;/h4&gt;
+&lt;iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~JohnTroony/3.embed"&gt;&lt;/iframe&gt;
+
+&lt;h4&gt;Cool Stuff about Plotly&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;You can save the plotted graph as a PNG/JPG file.&lt;/li&gt;
+&lt;li&gt;You can as well save your plotted graphs on your online plot.ly account (Public/Private).&lt;/li&gt;
+&lt;li&gt;Zooming at a particular area on the graph is easy (crop the section you want to zoom).&lt;/li&gt;
+&lt;li&gt;You can pan, auto-scale, zoom-in, zoom-out, reset axes and show data on hover.&lt;/li&gt;
+&lt;li&gt;Compare data on hover.&lt;/li&gt;
+&lt;li&gt;Edit chart on the fly.&lt;/li&gt;
+&lt;li&gt;Embed the graph as an iframe or html.&lt;/li&gt;
+&lt;li&gt;Finally, the sweet part, if you have multiple data sets, you can select to view a particular set only without the rest.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="View one data set only, tracker-extract" src="/images/track-one.png" /&gt;&lt;/p&gt;
+&lt;p&gt;For more more examples, guides &amp;amp; documentation, please visit &lt;a href="https://plot.ly/api/"&gt;https://plot.ly/api/&lt;/a&gt; or &lt;a href="https://github.com/plotly"&gt;https://github.com/plotly&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For more meaningful data to play around with, visit &lt;a href="https://github.com/caesar0301/awesome-public-datasets"&gt;Great Github list of public data sets&lt;/a&gt; or for guys in Kenya : &lt;a href="https://www.opendata.go.ke/"&gt;https://www.opendata.go.ke/&lt;/a&gt;.&lt;/p&gt;</summary><category term="Data visualization"></category><category term="python Big data"></category></entry><entry><title>Demons or Invisibility Cloaks?</title><link href="http://prewired.pw/2015/11/Invisibility-Uniform.html" rel="alternate"></link><updated>2015-11-23T11:41:00+03:00</updated><author><name>John Troon</name></author><id>tag:prewired.pw,2015-11-23:2015/11/Invisibility-Uniform.html</id><summary type="html">&lt;p&gt;Taking down terrorists, securing the borders of a country, being proactive and neutralizing potential threats before they spawn as attacks.... That is the line of thinking when we talk about DoD and any Army... Being one step ahead of the enemy has always been the rule of thumb. &lt;/p&gt;
 &lt;p&gt;When the president of U.S.A., Obama, visited Kenya on July 2015; there was different kind of reactions all over the world without forgetting CNN claiming Kenya to be a &lt;a href="http://www.theguardian.com/world/2015/aug/14/cnn-kenya-apologise-obama"&gt;"Hot bed of terror"&lt;/a&gt;. Kenya has been attacked by Al-Shabab militia group without clear ways of curbing such attacks and it was a surprise to some on how Obama would survive such threats while in Kenya.&lt;/p&gt;
 &lt;p&gt;I'm pretty sure the guys who work with the secret service were well prepared to have Obama hosted in Kenya. As soon as He was received and welcomed here in Nairobi, there was a human-like moving object captured by one of the local TV station and while many people claimed it was a demon or a ghost (I dunno the difference), my &lt;a href="https://twitter.com/harryness1o1"&gt;buddy&lt;/a&gt; and I laughed off as we had seen another "similar" video and we knew probably what the secret service might have as part of preparations.... :D&lt;/p&gt;
 &lt;p&gt;All sorts of conspiracy theories spewed on the Internet and social media, many claiming Obama has demons and other funny or rather crazy imaginations of Illuminati-ish stories. Below is a clip from a local popular (people's choice) TV show in Kenya #TheTrend discrediting the theories around the "demon caught on tape"...&lt;/p&gt;
