@@ -65,7 +65,7 @@
       </li>
         <li class="muted">&middot;</li>
         <li>
-            <a href="/tag/LUKS.html">LUKS</a>,             <a href="/tag/security.html">security</a>        </li>
+            <a href="../../tag/luks.html">LUKS</a>,             <a href="../../tag/security.html">security</a>        </li>
         <li class="muted">&middot;</li>
         <li>
           <address class="post-author">
@@ -81,17 +81,17 @@
 <p>This process (of Dropbox+LUKS) is sort of a cliché right now but I'm just posting to share my simplified way of doing it...</p>
 <h3>Step one:</h3>
 <p>Install Dropbox, head over to <a href="https://www.dropbox.com/install?os=lnx">Dropbox's site</a> and get Dropbox. I'm currently using Ubuntu 14 (Yes, Ubuntu!).. or do a Dropbox headless Install via command line</p>
-<div class="highlight"><pre>32-bit:
+<div class="highlight"><pre><span></span>32-bit:
 
-<span class="nv">$ </span><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&quot;https://www.dropbox.com/download?plat=lnx.x86&quot;</span> <span class="p">|</span> tar xzf -
+$ <span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&quot;https://www.dropbox.com/download?plat=lnx.x86&quot;</span> <span class="p">|</span> tar xzf -
 
 64-bit:
 
-<span class="nv">$ </span><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot;</span> <span class="p">|</span> tar xzf -
+$ <span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot;</span> <span class="p">|</span> tar xzf -
 
 Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
-<span class="nv">$ </span>~/.dropbox-dist/dropboxd
+$ ~/.dropbox-dist/dropboxd
 </pre></div>
 
 
@@ -100,30 +100,30 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 <p>You should have a folder named Dropbox in your home folder after you've logged-in to your account. </p>
 <h3>Step Three:</h3>
 <p>Download <a href="https://github.com/JohnTroony/LUKS-OPs/releases">Luks-Ops</a>, a script that I've written to automate the basic LUKS operation on Linux.</p>
-<div class="highlight"><pre><span class="c"># 1. Clone the repo</span>
-<span class="nv">$ </span>git clone https://github.com/JohnTroony/LUKS-OPs.git
-<span class="nv">$ </span><span class="nb">cd </span>LUKS-OPs
+<div class="highlight"><pre><span></span><span class="c1"># 1. Clone the repo</span>
+$ git clone https://github.com/JohnTroony/LUKS-OPs.git
+$ <span class="nb">cd</span> LUKS-OPs
 
-<span class="c"># 2. Change to super user</span>
-<span class="nv">$ </span>sudo su 
+<span class="c1"># 2. Change to super user</span>
+$ sudo su 
 
-<span class="c"># 3. Copy the script to /bin  as luksOps</span>
-<span class="nv">$ </span>cp luks-ops.sh /bin/luksOps 
+<span class="c1"># 3. Copy the script to /bin  as luksOps</span>
+$ cp luks-ops.sh /bin/luksOps 
 
-<span class="c"># 4. Move into the Dropbox folder to create the LUKS container</span>
-<span class="nv">$ </span><span class="nb">cd</span> /home/user/Dropbox 
+<span class="c1"># 4. Move into the Dropbox folder to create the LUKS container</span>
+$ <span class="nb">cd</span> /home/user/Dropbox 
 
-<span class="c"># 5. Create a LUKS container but don&#39;t mount it, DISKNAME is the label, 1000 is size in MB</span>
-<span class="nv">$ </span>luksOps new DISKNAME 1000
+<span class="c1"># 5. Create a LUKS container but don&#39;t mount it, DISKNAME is the label, 1000 is size in MB</span>
+$ luksOps new DISKNAME 1000
 
-<span class="c"># 6. Move the created LUKS container (DISKNAME) to /home/user/Dropbox</span>
-<span class="nv">$ </span>mv /usr/DISKNAME .
+<span class="c1"># 6. Move the created LUKS container (DISKNAME) to /home/user/Dropbox</span>
+$ mv /usr/DISKNAME .
 
-<span class="c"># 7. Mount the LUKS container. This will ask for the pass phrase.</span>
-<span class="nv">$ </span>luksOps mount DISKNAME
+<span class="c1"># 7. Mount the LUKS container. This will ask for the pass phrase.</span>
+$ luksOps mount DISKNAME
 
-<span class="c"># 8. Add files to the Mounted LUKS container then use the following command to exit</span>
-<span class="nv">$ </span>luksOps unmount-all
+<span class="c1"># 8. Add files to the Mounted LUKS container then use the following command to exit</span>
+$ luksOps unmount-all
 </pre></div>
 
 
@@ -170,7 +170,7 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 <footer class="footer">
   <div class="container">
     <p class="text-center">
-      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+      John (Troon) Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
     </p>
     <div class="text-center">
       Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.

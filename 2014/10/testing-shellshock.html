@@ -65,7 +65,7 @@
       </li>
         <li class="muted">&middot;</li>
         <li>
-            <a href="/tag/repost.html">repost</a>,             <a href="/tag/Linux.html">Linux</a>,             <a href="/tag/security.html">security</a>        </li>
+            <a href="../../tag/repost.html">repost</a>,             <a href="../../tag/linux.html">Linux</a>,             <a href="../../tag/security.html">security</a>        </li>
         <li class="muted">&middot;</li>
         <li>
           <address class="post-author">
@@ -77,12 +77,12 @@
       <p>Below is a simple bash script I've been using to test for shellshock vulns in my Linux setups. Though, it's not a script to really decide weather you are totally safe of not, due to the nature of shellshock and other different attack vectors that leverage it.</p>
 <p>Keep following updates from CVE and other Linux news portals. I've been using the script on CentOS 6.5 and Oracle Linux 6.5.. I do understand all bash versions through 4.3 are affected but I discovered even after patching my systems with the first fix updates, my Bash binary was somehow still affected until I did another update/upgrade.</p>
 <hr />
-<div class="highlight"><pre><span class="c">#!/bin/sh</span>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 
-<span class="c"># Adapted from Common Vuls DB</span>
-<span class="c"># Additional tweaks by John Troony.</span>
+<span class="c1"># Adapted from Common Vuls DB</span>
+<span class="c1"># Additional tweaks by John Troony.</span>
 
-<span class="c">#Some Color codes</span>
+<span class="c1">#Some Color codes</span>
 <span class="nv">red</span><span class="o">=</span><span class="s2">&quot;\033[31m&quot;</span>
 <span class="nv">green</span><span class="o">=</span><span class="s2">&quot;\033[32m&quot;</span>
 <span class="nv">blue</span><span class="o">=</span><span class="s2">&quot;\033[34m&quot;</span>
@@ -97,15 +97,15 @@ clear
 
 <span class="nv">PATH</span><span class="o">=</span>/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 
-<span class="c"># We use the default system&#39;s bash unless there is already</span>
-<span class="c"># a $TESTBASH environment variable present</span>
+<span class="c1"># We use the default system&#39;s bash unless there is already</span>
+<span class="c1"># a $TESTBASH environment variable present</span>
 <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> ! -x <span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nv">TESTBASH</span><span class="o">=</span>/bin/bash
     <span class="k">if</span> <span class="o">[</span> ! -x <span class="nv">$TESTBASH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
         <span class="nv">TESTBASH</span><span class="o">=</span>/usr/bin/bash
         <span class="k">if</span> <span class="o">[</span> ! -x <span class="nv">$TESTBASH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
             <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;ERROR: No bash binary to test!&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
-            <span class="nb">exit </span>1
+            <span class="nb">exit</span> 1
         <span class="k">fi</span>
     <span class="k">fi</span>
 <span class="k">fi</span>
@@ -114,14 +114,14 @@ clear
 
 <span class="nv">RUNPATCH</span><span class="o">=</span>0
 
-<span class="c">## CVE-2014-6271</span>
+<span class="c1">## CVE-2014-6271</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for CVE-2014-6271...&quot;</span>
 <span class="nv">VULNERABLE</span><span class="o">=</span>0
 <span class="o">(</span>
    env <span class="s1">&#39;x=() { :;}; echo vulnerable&#39;</span> <span class="s1">&#39;BASH_FUNC_x()=() { :;}; echo vulnerable&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s2">&quot;echo test&quot;</span>
 <span class="o">)</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep <span class="s2">&quot;vulnerable&quot;</span> &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nv">VULNERABLE</span><span class="o">=</span>1
 
-<span class="c">## CVE-2014-6271 (complete patch)</span>
+<span class="c1">## CVE-2014-6271 (complete patch)</span>
 <span class="o">(</span>
    env <span class="s1">&#39;x=() { :;}; echo vulnerable&#39;</span> <span class="s1">&#39;BASH_FUNC_x()=() { :;}; echo vulnerable&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s2">&quot;echo test&quot;</span>
 <span class="o">)</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep <span class="s2">&quot;bash: error importing function definition for &#39;x&#39;&quot;</span> &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nv">VULNERABLE</span><span class="o">=</span>1
@@ -136,11 +136,11 @@ clear
     :
 <span class="k">fi</span>
 
-<span class="c">## CVE-2014-7169</span>
+<span class="c1">## CVE-2014-7169</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for CVE-2014-7169...&quot;</span>
 <span class="nb">cd</span> /tmp
 rm -f <span class="nb">echo</span>
-env -i  <span class="nv">X</span><span class="o">=</span><span class="s1">&#39;() { (a)=&gt;\&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s1">&#39;echo date&#39;</span> &gt;/dev/null 2&gt;/dev/null <span class="c">#&#39;</span>
+env -i  <span class="nv">X</span><span class="o">=</span><span class="s1">&#39;() { (a)=&gt;\&#39;</span> <span class="nv">$TESTBASH</span> -c <span class="s1">&#39;echo date&#39;</span> &gt;/dev/null 2&gt;/dev/null <span class="c1">#&#39;</span>
 <span class="k">if</span> <span class="o">[</span> -f <span class="nb">echo</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;vulnerable to CVE-2014-7169&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
     <span class="nv">V7169</span><span class="o">=</span>1
@@ -151,8 +151,8 @@ env -i  <span class="nv">X</span><span class="o">=</span><span class="s1">&#39;(
     <span class="nb">echo</span> -e  <span class="nv">$blue</span><span class="s2">&quot;not vulnerable to CVE-2014-7169&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
 <span class="k">fi</span>
 
-<span class="c">## CVE-2014-7186</span>
-<span class="c">## I&#39;ve tested in my unpatched CentOS 6.5 Server and it causes a segment fault if CPU is in uprotected mode.</span>
+<span class="c1">## CVE-2014-7186</span>
+<span class="c1">## I&#39;ve tested in my unpatched CentOS 6.5 Server and it causes a segment fault if CPU is in uprotected mode.</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for CVE-2014-7186...&quot;</span>
 <span class="k">if</span> <span class="nv">$TESTBASH</span> -c <span class="s1">&#39;ulimit -c 0; true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF&#39;</span> 2&gt;/dev/null
 <span class="k">then</span>
@@ -164,7 +164,7 @@ env -i  <span class="nv">X</span><span class="o">=</span><span class="s1">&#39;(
     <span class="nv">RUNPATCH</span><span class="o">=</span>1
 <span class="k">fi</span>
 
-<span class="c">## CVE-2014-7187</span>
+<span class="c1">## CVE-2014-7187</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;\nChecking for  CVE-2014-7187...&quot;</span>
 perl -e <span class="s1">&#39;for my $x (1..200) { print &quot;for x$x in ; do :\n&quot;; } for my $x (1..200) { print &quot;done\n&quot; }&#39;</span> &gt; /tmp/test_script.<span class="nv">$$</span>.sh
 <span class="k">if</span> <span class="nv">$TESTBASH</span> /tmp/test_script.<span class="nv">$$</span>.sh 2&gt;/dev/null &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
@@ -179,7 +179,7 @@ perl -e <span class="s1">&#39;for my $x (1..200) { print &quot;for x$x in ; do :
 <span class="nv">EXITCODE</span><span class="o">=</span>1
 <span class="nb">echo</span>
 <span class="k">if</span> <span class="o">[</span> <span class="si">${</span><span class="nv">RUNPATCH</span><span class="si">}</span> <span class="o">=</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="c"># Check OS version</span>
+    <span class="c1"># Check OS version</span>
 
     <span class="nb">echo</span> -e  <span class="nv">$red</span><span class="s2">&quot;</span><span class="nv">$TESTBASH</span><span class="s2"> has some vulns that requires patching.&quot;</span><span class="nv">$normal</span> &gt;<span class="p">&amp;</span>2
     <span class="k">case</span> <span class="sb">`</span>gvquery -p os_dist 2&gt; /dev/null<span class="sb">`</span> in
@@ -231,7 +231,7 @@ perl -e <span class="s1">&#39;for my $x (1..200) { print &quot;for x$x in ; do :
 <footer class="footer">
   <div class="container">
     <p class="text-center">
-      John T. Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
+      John (Troon) Ombagi, <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons (4.0)</a> unless otherwise noted.
     </p>
     <div class="text-center">
       Generated by <a href="http://getpelican.com" target="_blank">Pelican</a> with the <a href="http://github.com/nairobilug/pelican-alchemy">alchemy</a> theme.
