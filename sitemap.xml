@@ -5,29 +5,43 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://prewired.co.ke/</loc>
-<lastmod>2016-07-10T22:21:06-00:00</lastmod>
+<lastmod>2016-07-12T00:41:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.co.ke/archives.html</loc>
-<lastmod>2016-07-10T22:21:06-00:00</lastmod>
+<lastmod>2016-07-12T00:41:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.co.ke/tags.html</loc>
-<lastmod>2016-07-10T22:21:06-00:00</lastmod>
+<lastmod>2016-07-12T00:41:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://prewired.co.ke/categories.html</loc>
-<lastmod>2016-07-10T22:21:06-00:00</lastmod>
+<lastmod>2016-07-12T00:41:47-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/2016/03/Kenya-cyber-law.html</loc>
+<lastmod>2016-03-10T11:41:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/2016/02/Plotly-data-visualization.html</loc>
+<lastmod>2016-02-20T03:41:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -137,8 +151,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://prewired.co.ke/category/data.html</loc>
+<lastmod>2016-02-20T03:41:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://prewired.co.ke/category/infosec.html</loc>
-<lastmod>2015-10-20T15:20:00+02:27</lastmod>
+<lastmod>2016-03-10T11:41:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -179,15 +200,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://prewired.co.ke/tag/gpg.html</loc>
-<lastmod>2015-02-12T16:28:00+02:27</lastmod>
+<loc>http://prewired.co.ke/tag/av-evasion.html</loc>
+<lastmod>2015-10-20T15:20:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://prewired.co.ke/tag/av-evasion.html</loc>
-<lastmod>2015-10-20T15:20:00+02:27</lastmod>
+<loc>http://prewired.co.ke/tag/kenya-digital-crime.html</loc>
+<lastmod>2016-03-10T11:41:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/tag/nginx.html</loc>
+<lastmod>2014-09-13T18:28:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/tag/gpg.html</loc>
+<lastmod>2015-02-12T16:28:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -207,6 +242,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://prewired.co.ke/tag/cyber-laws.html</loc>
+<lastmod>2016-03-10T11:41:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://prewired.co.ke/tag/antivirus.html</loc>
 <lastmod>2015-10-10T11:41:00+02:27</lastmod>
 <changefreq>daily</changefreq>
@@ -214,8 +256,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://prewired.co.ke/tag/nginx.html</loc>
-<lastmod>2014-09-13T18:28:00+02:27</lastmod>
+<loc>http://prewired.co.ke/tag/data-visualization.html</loc>
+<lastmod>2016-02-20T03:41:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/tag/forensics.html</loc>
+<lastmod>2016-03-10T11:41:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/tag/data-analysis.html</loc>
+<lastmod>2016-02-20T03:41:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -265,6 +321,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://prewired.co.ke/author/john-troon.html</loc>
 <lastmod>2015-11-23T11:41:00+02:27</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://prewired.co.ke/author/john-troon-ombagi.html</loc>
+<lastmod>2016-03-10T11:41:00+02:27</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

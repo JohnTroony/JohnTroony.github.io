@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Prewired</title><link>http://prewired.co.ke/</link><description></description><lastBuildDate>Thu, 10 Mar 2016 11:41:00 +0300</lastBuildDate><item><title>Kenya Law Enforcement &amp; use of Digital Evidence</title><link>http://prewired.co.ke/2016/03/Kenya-cyber-law.html</link><description>&lt;p&gt;&lt;img alt="Kenya cyber law" src="/images/law.jpeg" /&gt; &lt;/p&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Digital Forensics on some cases is also referred as computer forensics or cyber-forensics. This integrates the fields of computer science and law to investigate crime.&lt;/p&gt;
+&lt;p&gt;Technology is advancing continuously, think of this, in the year 1996 we had Floppy disks as storage devices with a capacity of not more than 12 MB (megabytes), two decades later, we now have smaller devices with a capacity 1000 times than the older storage devices.&lt;/p&gt;
+&lt;p&gt;New advancements and improvement in the digital storage space means more potential data retained for the forensics investigators to examine. Although, there is another flip side when we talk about tech advancements; there are problems which arise when new file-systems, stronger encryption standards and newer storage mediums are developed.&lt;/p&gt;
+&lt;p&gt;Unquestionably, advances in technology increase the potentiality and renovate the methodology of traditional criminal behavior. It means forensic investigators have to study these new tech improvements and find a way of getting the stored/deleted data in a correct way.&lt;/p&gt;
+&lt;h2&gt;When Digital Forensic meets the Law&lt;/h2&gt;
+&lt;p&gt;For a digital evidence to be legally admissible in court, investigators must follow proper legal procedures when recovering and analyzing data from victim’s digital device(s).&lt;/p&gt;
+&lt;p&gt;The inability of law to keep pace with technological advancements in some cases limit the use of computer forensic evidence in court. Some of these laws are written without consulting computer forensics experts and are often not reviewed; not reliably adequate in assessing the techniques used in a digital system/device search.&lt;/p&gt;
+&lt;p&gt;Article 19 did a very interesting legal analysis of the Kenya’s &lt;a href="https://www.article19.org/data/files/medialibrary/37652/Kenya-Cybercrime-Bill-129072014-BB.pdf"&gt;“Cyber-crime and Computer Related Crimes Bill”&lt;/a&gt; . From their final report and recommendations, it is conclusively right to say there is need to review these bills &amp;amp; laws that involve use of digital evidence in court. We need to unite our legislators, law enforcement agencies &amp;amp; privacy advocates groups together and come up with sound Standard Operation Procedures (SOPs) for Forensics examiners as well as laws that can assist in having a fair unbiased trials.&lt;/p&gt;
+&lt;p&gt;Our prosecutors and lawyers need to understand these forensics techniques used in acquiring digital evidence and be able to ask critical questions before making any decision. Our Law schools on the other hand, need to address some of these issues by reviewing their course works and subjecting the scholars into an introductory lesson to digital forensic.&lt;/p&gt;
+&lt;p&gt;Capacity building should be provided to our judges &amp;amp; legislators so as to assist law enforcement agencies in the area of computer-related crime. We can only have a fair judgment when our Judges have enough information pertaining a case and the presented evidence.&lt;/p&gt;
+&lt;p&gt;To be a source of trusted digital evidence, our law enforcement agencies need proper access to latest forensic gadgets, hardware and tools to enhance their investigative capabilities. They should be provided with new training(s) at least twice a year, there is much to learn considering the new smart phones, tablets and other devices being rolled out to the public by competing hardware manufacturing companies.&lt;/p&gt;
+&lt;p&gt;Privacy concerns is another issue while dealing with forensics. There is a thin line between suspect’s human rights and extent of what forensics activities should engage. For instance, if a phone is seized from a suspect, then a new SMS is received. Should the new message be a subject of review or not? Some privacy advocates can argue out that that is a breach of human rights. Also, as free encryption and anonymity tools/skills increase, technology may be (ab)used by helping criminals hide their actions &lt;a href="https://blog.cr.yp.to/20160315-jefferson.html"&gt;(like the recent FBI &amp;amp; Apple debate)&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;To tackle these problems, we need policies, protocols and developed by both law enforcement agencies &amp;amp; legislators. They should stipulate accepted procedures of acquiring evidence and clear out conflicting laws that may obstruct the use of digital evidence in court. These policies and procedures should be unbiased and neutral.&lt;/p&gt;
+&lt;h2&gt;Who is a Qualified Forensic Examiner ?&lt;/h2&gt;
+&lt;p&gt;To determine whether a person qualifies as a forensic examiner (also refereed as an expert witness), and whether their testimony is admissible, involves a process of examination, cross-examination, and being recognized by the court.&lt;/p&gt;
+&lt;p&gt;The attorney calling the potential expert witness should generally read his or her qualifications into the record, and/or may ask a series of questions.These questions are designed to show the person’s credentials as an expert. Such questions might include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What degrees, diplomas, or certificates do you have?&lt;/li&gt;
+&lt;li&gt;What positions have you held in the field?&lt;/li&gt;
+&lt;li&gt;What lectures or courses have you taught in this field?&lt;/li&gt;
+&lt;li&gt;What additional training or courses related to this field have you taken?&lt;/li&gt;
+&lt;li&gt;What memberships in organizations related to this field do you have?&lt;/li&gt;
+&lt;li&gt;What books or papers have you written pertaining to the field?&lt;/li&gt;
+&lt;li&gt;What is your past experience as an expert witness in this field?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, in looking at these questions, a forensic examiner doesn't need to have a positive answer to every one. The key factor is the overall expertise, not whether the forensic examiner have an impressive answer to each and every one of these questions. After all, the first time anyone testifies in court, the answer to whether you have testified before is a resounding “no.”&lt;/p&gt;
+&lt;p&gt;Generally a good forensic examiner or witness expert in court should have the following qualities:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Trained in the use of forensics tools and procedures.&lt;/li&gt;
+&lt;li&gt;Should have experience in conducting forensics examinations.&lt;/li&gt;
+&lt;li&gt;Have ethical morals for unbiased analysis of evidence &amp;amp; truthful reporting.&lt;/li&gt;
+&lt;li&gt;Inquisitive nature to discover information and for thinking outside of the box.&lt;/li&gt;
+&lt;li&gt;Methodical in examination and documentation procedures.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Which Tools to Use?&lt;/h2&gt;
+&lt;p&gt;Computer Forensics Tool Testing (&lt;strong&gt;CFTT&lt;/strong&gt;) Project and National Institute of Standards and Technology (&lt;strong&gt;NIST&lt;/strong&gt;) describe some forensically sound tools and methods forensic examiners can adapt. They describe tools and methods known and verified to acquire electronic information in a manner that ensures the information is “as originally discovered” and is reliable enough to be admitted into evidence.&lt;/p&gt;
+&lt;p&gt;Some Forensic Tools can sometimes add information to digital evidence, this new information must be discernible from the original evidence! The process of acquiring electronic information should be in a manner that ensures it is “as originally discovered” and is reliable enough to be admitted into evidence.&lt;/p&gt;
+&lt;p&gt;Below are resources to help law enforcement agencies decide on which tools to use:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;National Institute of Standards and Technology (&lt;strong&gt;NIST&lt;/strong&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cftt.nist.gov/"&gt;http://www.cftt.nist.gov/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cftt.nist.gov/CFTT-Booklet-08112015.pdf"&gt;http://www.cftt.nist.gov/CFTT-Booklet-08112015.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Computer Forensics Tool Testing Handbook&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.nist.gov/itl/ssd/cs/cftt/upload/CFTT-Booklet-Revised-02012012.pdf"&gt;http://www.nist.gov/itl/ssd/cs/cftt/upload/CFTT-Booklet-Revised-02012012.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Conclusions and Future Issues&lt;/h2&gt;
+&lt;p&gt;The use of digital evidence has been hindered by lack of nomenclature, due primarily to the reluctance of the courts to interpret emerging legislative actions. There is no clear defined procedures and laid out framework to help our investigators, prosecutors and courts determine the legality of either questioned behavior or law enforcement actions.&lt;/p&gt;
+&lt;p&gt;There is a shift from traditional form of crime to usage of digital devices such as computers and mobile phones in committing offenses… For instance, terrorist use on-line social media platform for recruitment and communication. Criminalizing terrorist acts using digital evidence without a clear stipulated procedure, means either the suspect or a law enforcement agency evidence might be favored by the court.&lt;/p&gt;
+&lt;p&gt;For a fair trail using digital evidence in our courts of law, we should have a legal framework (which on the developing stages involved the legislators, forensics experts from our law enforcement agencies and privacy advocates groups). Our examiners should have modern forensic laboratories with enhanced investigative capabilities.&lt;/p&gt;
+&lt;h3&gt;Future issues (to be considered):&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Developing international cooperation.&lt;/li&gt;
+&lt;li&gt;Developing relationships between investigative agencies &amp;amp; the private Sector.&lt;/li&gt;
+&lt;li&gt;Establishing accountability for tech users (or should I say abusers?).&lt;/li&gt;
+&lt;li&gt;Increasing inter-agency and inter-departmental cooperation.&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John (Troon) Ombagi</dc:creator><pubDate>Thu, 10 Mar 2016 11:41:00 +0300</pubDate><guid isPermaLink="false">tag:prewired.co.ke,2016-03-10:2016/03/Kenya-cyber-law.html</guid><category>Cyber laws</category><category>forensics</category><category>Kenya Digital crime</category></item><item><title>Visually Exploring Data with Plotly.</title><link>http://prewired.co.ke/2016/02/Plotly-data-visualization.html</link><description>&lt;p&gt;With the emerging cultural landscape of big data and conversational buzz around big data analytics, I fell in love with data! There are patterns in almost every activity we carry out, from our eating habits, shopping, Internet usage to how we talk. When we capture these data in a correct format, we can analyze and present the patterns in a way that reveal meaningful details to us.&lt;/p&gt;
+&lt;p&gt;Whenever we analyze data, our main goal is to show its features in order of their importance, reveal patterns, and features that exist across multiple dimensions. I’ve been learning different Python data analysis tools and frameworks despite the fact that I’m not trained as a data-scientist. My experience while learning how to use some of these tools (Matplotlib, Pandas, NumPy, SciPy, IPython, NLTK &amp;amp; SQLAlchemy) forced me to explore other ways to present the information from the analyzed data.&lt;/p&gt;
+&lt;p&gt;When it comes to visually presenting analyzed data, I, personally love Plotly even after exploring other libraries like &lt;code&gt;D3.js&lt;/code&gt; (which is my second best). Matplotlib is capable of doing more than good, but when you want to stream the results on a website or display analysis on a dashboard, you’ll need an extra effort. Plotly is the answer, it has support for Python, R, MATLAB, JavaScript, Ruby, GO, F#, hardware &amp;amp; embedded systems like Arduino, Julia and an online Streaming API etc&lt;/p&gt;
+&lt;h2&gt;Where is thy data?&lt;/h2&gt;
+&lt;p&gt;So after replacing Gnome with XFCE on my Arch Linux (3 months ago), I realized each time I boot up my Laptop, I had to &lt;code&gt;kill -9&lt;/code&gt; some file tracking applications that degraded the performance on the Laptop because they were trying to index everything on my full hard-disk.&lt;/p&gt;
+&lt;p&gt;Over a period of time, I could see a lot of &lt;code&gt;kill&lt;/code&gt; commands on my history along with the PIDs (Process IDs) and that's how I decided not to automatically do this on &lt;code&gt;.bash_profile&lt;/code&gt;. Below is a screen-shot of how the Tracker App is mapped on my Arch Linux instance:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;troon: ~/Desktop/Tracker» ps aux | grep tracker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Terminal screen-shot" src="/images/term.png" /&gt; &lt;/p&gt;
+&lt;p&gt;I cleaned this data and saved it on a CSV file. Let us visualize which PIDs are commonly used after several reboots. Here is a snip of the raw data (history id, &lt;code&gt;kill -9&lt;/code&gt; command and the Tracker PID). I was interested on the saved Tracker PIDs only.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;troon: ~/Desktop/Tracker» &lt;span class="nb"&gt;history&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;&amp;#39;kill -9&amp;#39;&lt;/span&gt; &amp;gt; trackerPIDs.txt
+troon:~/Desktop/Tracker» head trackerPIDs.txt
+   &lt;span class="m"&gt;66&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 17323
+  &lt;span class="m"&gt;181&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 3410
+  &lt;span class="m"&gt;182&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 3346
+  &lt;span class="m"&gt;183&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 3330
+  &lt;span class="m"&gt;292&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 9100
+ &lt;span class="m"&gt;1125&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 24279
+ &lt;span class="m"&gt;1128&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 25098
+ &lt;span class="m"&gt;1604&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 593
+ &lt;span class="m"&gt;1635&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 603
+ &lt;span class="m"&gt;1636&lt;/span&gt;  &lt;span class="nb"&gt;kill&lt;/span&gt; -9 606
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After cleaning the data on &lt;code&gt;trackerPIDS.txt&lt;/code&gt; and saving it on a different file in CSV format, &lt;code&gt;cleanedTracks.csv&lt;/code&gt;. Each row on the final file contains five PIDs (in the following order):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-user-guides&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-apps&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-store&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-fs&lt;/li&gt;
+&lt;li&gt;/usr/lib/tracker/tracker-miner-extract&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The CSV file with the cleaned data finally looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;troon:~/Desktop/Tracker» head cleanedTracks.csv
+627,628,629,608,610
+613,620,623,791,793
+605,608,617,618,604
+715,603,607,614,615
+616,605,609,610,618
+621,590,594,598,605
+608,602,604,612,616
+627,630,640,643,644
+775,777,784,785,786
+692,694,702,703,704
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you’d wish to check on the data used and all other files related to this post, check out &lt;a href="https://github.com/JohnTroony/Plotly-DataVis"&gt;https://github.com/JohnTroony/Plotly-DataVis&lt;/a&gt; .&lt;/p&gt;
+&lt;h2&gt;Using Plotly to visualize the data.&lt;/h2&gt;
+&lt;p&gt;Using Plotly to visualize data is as easy as making pancakes on a weekend. First, I had to install Plotly (for Python) &lt;code&gt;pip install Plotly&lt;/code&gt;. Below is a script I wrote to open the CSV file, fill empty lists with data from the file and feed them to Plotly.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;Plotly.offline&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;Plotly.graph_objs&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;go&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Open the CSV file with data&lt;/span&gt;
+&lt;span class="n"&gt;readdata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cleanedTracks.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create empty lists for the data&lt;/span&gt;
+&lt;span class="n"&gt;miner_user_guides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;miner_apps&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;store&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;miner_fs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;extract&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# For every line in the CSV file, append respective list&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;readdata&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;miner_user_guides&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;miner_apps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;store&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;miner_fs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+
+
+&lt;span class="c1"&gt;############# Scatter Plot&lt;/span&gt;
+
+&lt;span class="c1"&gt;# map our data (in lists) to a Scatter plot&lt;/span&gt;
+&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_user_guides&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;miner user guides&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_appsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_apps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;miner apps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;storePlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;store&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;store&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_fsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_fs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;miner&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;extractPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;extract&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# data to be plotted&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_appsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;storePlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_fsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extractPlot&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;layout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Layout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Tracker Apps PIDs Against Reboots&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;xaxis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Number of Reboot&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;titlefont&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Courier New, monospace&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#7f7f7f&amp;#39;&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="n"&gt;yaxis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Tracker PID&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;titlefont&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Courier New, monospace&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#7f7f7f&amp;#39;&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Combine data and plot &lt;/span&gt;
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;layout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;layout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tracker-scatter.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;############# Histogram Plot&lt;/span&gt;
+
+&lt;span class="c1"&gt;# map our data (in lists) to a Histogram plot&lt;/span&gt;
+&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_user_guides&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;miner user guides&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_appsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_apps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;miner apps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;storePlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;store&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;store&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;miner_fsPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;miner_fs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;miner&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;extractPlot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Histogram&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;extract&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# data to be plotted&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;miner_user_guidesPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_appsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;storePlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;miner_fsPlot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extractPlot&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;layout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Layout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Tracker Apps PIDs Against Frequency&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;xaxis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Number of Frequency&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;titlefont&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Courier New, monospace&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#7f7f7f&amp;#39;&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="n"&gt;yaxis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Tracker PID&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;titlefont&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Courier New, monospace&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#7f7f7f&amp;#39;&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# Combine data and plot &lt;/span&gt;
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;layout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;layout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tracker-histogram.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can download the script here : &lt;a href="https://gist.github.com/JohnTroony/1d938afa6121915b62a2"&gt;https://gist.github.com/JohnTroony/1d938afa6121915b62a2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When this script is executed, two files are generated (and opened on your default browser):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://plot.ly/~JohnTroony/1/scatter-plot-tracker-apps-pids-against-reboots"&gt;tracker-scatter.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://plot.ly/~JohnTroony/3/tracker-apps-pids-against-frequency/"&gt;tracker-histogram.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Scatter Plot&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Scatter Plot" src="/images/Scatter.png" /&gt; &lt;/p&gt;
+&lt;h3&gt;Histogram Plot&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Histogram Plot" src="/images/Histogram.png" /&gt; &lt;/p&gt;
+&lt;h2&gt;Cool Stuff about Plotly….&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Plotly Output" src="/images/Plotly.png" /&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can save the plotted graph as a PNG/JPG file.&lt;/li&gt;
+&lt;li&gt;You can as well save your plotted graphs on your online &lt;plot.ly&gt; account (Public/Private).&lt;/li&gt;
+&lt;li&gt;Zooming at a particular area on the graph is easy (crop the section you want to zoom).&lt;/li&gt;
+&lt;li&gt;You can pan, auto-scale, zoom-in, zoom-out, reset axes and show data on hover.&lt;/li&gt;
+&lt;li&gt;Compare data on hover.&lt;/li&gt;
+&lt;li&gt;Edit chart on the fly.&lt;/li&gt;
+&lt;li&gt;Embed the graph as an iframe or html.&lt;/li&gt;
+&lt;li&gt;Finally, the sweetest part, if you have multiple data sets, you can select to view a particular set only without the rest (like on &lt;code&gt;d3.js&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Go try it out!&lt;/h2&gt;
+&lt;p&gt;For more Plotly examples, guides &amp;amp; documentation, please visit &lt;a href="https://plot.ly/api/"&gt;https://plot.ly/api/&lt;/a&gt; or &lt;a href="https://github.com/Plotly"&gt;https://github.com/Plotly&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more meaningful data to play around with, visit : &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Great Github list of public data sets.&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/caesar0301/awesome-public-datasets"&gt;https://github.com/caesar0301/awesome-public-datasets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Or, for guys in Kenya, Opendata.&lt;ul&gt;
+&lt;li&gt;https://www.opendata.go.ke/.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">John (Troon) Ombagi</dc:creator><pubDate>Sat, 20 Feb 2016 03:41:00 +0300</pubDate><guid isPermaLink="false">tag:prewired.co.ke,2016-02-20:2016/02/Plotly-data-visualization.html</guid><category>data visualization</category><category>data analysis</category></item></channel></rss>
